@@ -2,7 +2,7 @@ import os
 import re
 
 unresolvedComments = 0;
-commentRegex = r"\[([^\[\]]*)\]>\[([^\[\]]*)\]";
+commentRegex = r"\[(.*?)\]>\[(.*?)\]";
 experiments = filter(lambda x: re.search("^\d\d-.+$", x), os.listdir(".."))
 
 for experiment in experiments:
@@ -14,6 +14,7 @@ for experiment in experiments:
 
         # GENERATE TITLE #
         title = "Experiment " + experiment.title().replace("-"," ")
+        title  = re.sub(r"(\d\d) ", r"\1: ", title)
 
         # OUTPUT COMMENT INFO #
         comments = [comment for comment in re.finditer(commentRegex, originalContent)];
@@ -45,7 +46,7 @@ for experiment in experiments:
         # Make image links route directly to github
         post = re.sub(
             r"!\[(.*?)\]\((.*?)\)",
-            r"![\1](https://github.com/JoshIsAStudent/physical-computing/blob/main/" + experiment + r"/\2)",
+            r"![\1](https://github.com/JoshIsAStudent/physical-computing/blob/main/" + experiment + r"/\2?raw=true)",
             post
         )
 
@@ -58,7 +59,7 @@ for experiment in experiments:
         # Tidy new lines
         post = re.sub("\n\n\n+", "\n\n", post)
 
-        with open("posts/" + title + ".md", "w") as outputFile:
+        with open("posts/" + re.sub(r"[:]", "", title) + ".md", "w") as outputFile:
             outputFile.write(post)
 
 if unresolvedComments > 0:

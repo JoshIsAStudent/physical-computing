@@ -1,25 +1,7 @@
-/* Hide the unused menu from the theme */
-nav.header {
-    display: none;
-}
-
-/* Re-format the blog title */
-h1.head-title a {
- font-size: inherit;
-}
-
-h1.head-title {
-    font-size: 3em;
-    margin: 1em 0;
-    margin-bottom: 2em;
-}
-
 /* Format code blocks*/
 pre {
     background: #eee;
-    padding: 4px;
-    font-size: 1rem;
     line-height: 1.2em;
-    margin: 1em 0;
-    border-radius: 4px;
+    padding: 12px;
+    border-radius: 6px;
 }

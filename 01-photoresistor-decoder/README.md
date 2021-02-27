@@ -4,6 +4,7 @@ In this experiment you will take the [10-bit analogue]>[is that the correct term
 []>[Include an image/video!]
 
 ## [Components]>[Check that these are correct]
+
 @standard-components
 * 1 x Photoresistor
 * 1 x [X]>[How many??]Ω resistor
