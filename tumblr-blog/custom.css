@@ -1,7 +1,58 @@
-/* Format code blocks*/
-pre {
-    background: #eee;
-    line-height: 1.2em;
-    padding: 12px;
+body {
+    color: white;
+}
+
+/* Post formatting */
+.text .post-wrapper {
+    background: none;
+    border: none;
+}
+
+.text .post-content {
+    padding: 0px;
+}
+
+/* Text formmatting */
+.blog-title {
+    font-family: "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.post-content .title,
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+    font-family: "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.post-content .title a {font-size: 2.5rem}
+.post-content .title {border-bottom: 3px white dotted}
+
+.post-content a {
+    color: blue;
+}
+
+/* Images */
+.post-content img {
     border-radius: 6px;
 }
+
+/* Format code blocks*/
+.post-content pre {
+    background: #222;
+    padding: 12px;
+    border-radius: 6px;
+    line-height: 1.2em;
+}
+
+.post-content pre code {color: #fff}
+.post-content pre code .hljs-keyword,
+.post-content pre code .hljs-built_in
+{color: #00b7ff}
+.post-content pre code .hljs-comment {color: #969696}
+.post-content pre code .hljs-number {color: #db57ee}
