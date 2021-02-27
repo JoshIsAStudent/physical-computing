@@ -1,5 +1,7 @@
-# Experiment 01: Photoresistor Decoder
-In this experiment you will take the [10-bit analogue]>[is that the correct term?] output of a photoresistor (a.k.a photocell), decode the 4 most significant bits using code running on the Arduino, then display those four bits on LEDs.
+# Experiment 01: [Photoresistor Decoder]>[Should titles be more descriptive, e.g. "Decoding the signal of a photoresistor"]
+*Experiment conducted 2021/02/23*
+
+In this experiment we will take the [10-bit analogue]>[is that the correct term?] output of a photoresistor (as known as a photocell), decode the 4 most significant bits using code running on the Arduino, then display those four bits on LEDs.
 
 []>[Include an image/video!]
 
@@ -11,10 +13,8 @@ In this experiment you will take the [10-bit analogue]>[is that the correct term
 * 4 x LEDs
 * 4 x [X]>[How many??]Ω resistors
 
-## Step 1: Wiring the photo resistor
+## Step 1: Wiring The Photoresistor
 Wire your breadboard as shown, using the [X]>[How many??]Ω resistor.
-
-![](photo/temp.png)
 
 []>[Show a diagram of the first part of the circuit]
 
@@ -24,7 +24,7 @@ The orange wire is used to carry the [voltage/current]>[which one is it?] into t
 
 [You might wonder why two resistors are used?]>[Why does that happen J??]
 
-## Step 2: Decoding the signal in code
+## Step 2: Decoding The Signal in Code
 By reading the signal carried by the orange wire, we can now read how much light the photocell is detecting. The more light, the [higher/lower]>[??] the signal will be.
 
 We can program our `setup()` function to read this analogue signal into the Arduino. In the meantime, we will also set up pins 10-13 as digital outputs, which we will use to output the 4 most significant bits of the signal.
@@ -64,7 +64,7 @@ void loop() {
 
 @complete-code
 
-## Step 3: Displaying the decoded signal
+## Step 3: Displaying The Decoded Signal
 Now that our code is decoding the signal, we want to display that using our four LEDs. Each LED has it's own [X]>[How many??]Ω resistor. They are wired the same, except that they each connect to a different pin on the Arduino. As we want the left-most LED to display the most significant bit (the 10th bit), we will connect it to pin 13.
 
 []>[Show a diagram!]

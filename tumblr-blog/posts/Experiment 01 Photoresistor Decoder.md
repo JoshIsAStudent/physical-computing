@@ -1,5 +1,7 @@
 # Experiment 01: Photoresistor Decoder
-In this experiment you will take the 10-bit analogue output of a photoresistor (a.k.a photocell), decode the 4 most significant bits using code running on the Arduino, then display those four bits on LEDs.
+*Experiment conducted 2021/02/23*
+
+In this experiment we will take the 10-bit analogue output of a photoresistor (as known as a photocell), decode the 4 most significant bits using code running on the Arduino, then display those four bits on LEDs.
 
 # Components
 This experiment uses the Arduino UNO R3 Project Starter Kit.
@@ -12,10 +14,8 @@ This experiment uses the Arduino UNO R3 Project Starter Kit.
 * 4 x LEDs
 * 4 x XΩ resistors
 
-# Step 1: Wiring the photo resistor
+# Step 1: Wiring The Photoresistor
 Wire your breadboard as shown, using the XΩ resistor.
-
-![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/photo/temp.png?raw=true)
 
 Here the red wire is taking a 5V signal from the Arduino into the circuit. It first passes through the XΩ resistor, and then through the photoresistor. The resistance of the first resistor is static, however the resistance of the photoresistor changes depending on the light level. The more light, the more/less resistance there is. We then use black wires to ground the signal. Two wires are used, connecting the resistor to the blue line of the breadboard, and the blue line of the breadboard to the Arduino ground pin, as later we'll also ground our LEDs by connecting them to the blue line of the breadboard.
 
@@ -23,7 +23,7 @@ The orange wire is used to carry the voltage/current into the Arduino. We connec
 
 You might wonder why two resistors are used?
 
-# Step 2: Decoding the signal in code
+# Step 2: Decoding The Signal in Code
 By reading the signal carried by the orange wire, we can now read how much light the photocell is detecting. The more light, the higher/lower the signal will be.
 
 We can program our `setup()` function to read this analogue signal into the Arduino. In the meantime, we will also set up pins 10-13 as digital outputs, which we will use to output the 4 most significant bits of the signal.
@@ -63,7 +63,7 @@ void loop() {
 
 You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/01-photoresistor-decoder.ino).
 
-# Step 3: Displaying the decoded signal
+# Step 3: Displaying The Decoded Signal
 Now that our code is decoding the signal, we want to display that using our four LEDs. Each LED has it's own XΩ resistor. They are wired the same, except that they each connect to a different pin on the Arduino. As we want the left-most LED to display the most significant bit (the 10th bit), we will connect it to pin 13.
 
 # There you have it!
