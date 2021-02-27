@@ -1,29 +1,19 @@
-# [Checklist]>[Remove this once done]
-* a description of the experiment(s)
-plenty of photos and videos documenting the experiment(s)
-* technical information, including code and circuit diagrams
-* a list of the components used
-* links to any outside sources of information used in the experiment(s)
-* a record of any troubleshooting required: what went wrong, and how did you overcome it?
-* an evaluation: what was learned, how could it be improved, how could it be used?
-
 # Experiment 01: Photoresistor Decoder
 In this experiment you will take the [10-bit analogue]>[is that the correct term?] output of a photoresistor (a.k.a photocell), decode the 4 most significant bits using code running on the Arduino, then display those four bits on LEDs.
 
 []>[Include an image/video!]
 
 ## [Components]>[Check that these are correct]
-This experiment uses the Arduino UNO R3 Project Starter Kit.
-* 1 x UNO R3 Controller Board (the Arduino)
-* 1 x Breadboard
+@standard-components
 * 1 x Photoresistor
 * 1 x [X]>[How many??]Ω resistor
 * 4 x LEDs
 * 4 x [X]>[How many??]Ω resistors
-* Breadboard jumper wires
 
 ## Step 1: Wiring the photo resistor
 Wire your breadboard as shown, using the [X]>[How many??]Ω resistor.
+
+![](photo/temp.png)
 
 []>[Show a diagram of the first part of the circuit]
 
@@ -79,3 +69,13 @@ Now that our code is decoding the signal, we want to display that using our four
 []>[Show a diagram!]
 
 ## [There you have it!]>[Figure out what evaluation to include in here!]
+
+
+# [Checklist]>[Remove this once done]
+* a description of the experiment(s)
+plenty of photos and videos documenting the experiment(s)
+* technical information, including code and circuit diagrams
+* a list of the components used
+* links to any outside sources of information used in the experiment(s)
+* a record of any troubleshooting required: what went wrong, and how did you overcome it?
+* an evaluation: what was learned, how could it be improved, how could it be used?
