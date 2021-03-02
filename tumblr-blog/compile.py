@@ -30,8 +30,8 @@ for experiment in experiments:
 
         # Include kit info
         post = post.replace(
-            "# Components",
-            "# Components\n"\
+            "# Components Used",
+            "# Components Used\n"\
             "This experiment uses the Arduino UNO R3 Project Starter Kit."
         )
 
