@@ -5,7 +5,7 @@ In this experiment we will take the [10-bit analogue]>[is that the correct term?
 
 []>[Include an image/video!]
 
-## [Components]>[Check that these are correct]
+## [Components Used]>[Check that these are correct]
 
 @standard-components
 * 1 x Photoresistor

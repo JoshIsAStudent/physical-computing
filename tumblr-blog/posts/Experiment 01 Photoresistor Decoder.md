@@ -3,7 +3,7 @@
 
 In this experiment we will take the 10-bit analogue output of a photoresistor (as known as a photocell), decode the 4 most significant bits using code running on the Arduino, then display those four bits on LEDs.
 
-# Components
+# Components Used
 This experiment uses the Arduino UNO R3 Project Starter Kit.
 
 * 1 x UNO R3 Controller Board (the Arduino)
