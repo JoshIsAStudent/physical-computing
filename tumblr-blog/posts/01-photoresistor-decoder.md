@@ -61,7 +61,7 @@ void loop() {
 }
 ```
 
-You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/01-photoresistor-decoder.ino).
+You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder).
 
 # Step 3: Displaying The Decoded Signal
 Now that our code is decoding the signal, we want to display that using our four LEDs. Each LED has it's own XΩ resistor. They are wired the same, except that they each connect to a different pin on the Arduino. As we want the left-most LED to display the most significant bit (the 10th bit), we will connect it to pin 13.
