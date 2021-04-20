@@ -1,7 +1,9 @@
-# Experiment 01: Photoresistor Decoder
+# Experiment 01: Photoresistor to Binary Decoder
 *Experiment conducted 2021/02/23*
 
-In this experiment we will take the 10-bit analogue output of a photoresistor (as known as a photocell), decode the 4 most significant bits using code running on the Arduino, then display those four bits on LEDs.
+For my first experiment I took the 10-bit analog output of a photoresistor (also known as a photocell), decoded the 4 most significant bits in code running on the Arduino, and then displayed those four bits on LEDs.
+
+![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/demo-video.mov?raw=true)
 
 # Components Used
 This experiment uses the Arduino UNO R3 Project Starter Kit.
@@ -10,23 +12,25 @@ This experiment uses the Arduino UNO R3 Project Starter Kit.
 * 1 x Breadboard
 * Breadboard jumper wires
 * 1 x Photoresistor
-* 1 x XΩ resistor
+* 1 x 5KΩ resistor
 * 4 x LEDs
-* 4 x XΩ resistors
+* 4 x 220Ω resistors
 
 # Step 1: Wiring The Photoresistor
-Wire your breadboard as shown, using the XΩ resistor.
+I first wired the photoresistor as shown below, using the 5KΩ resistor.
 
-Here the red wire is taking a 5V signal from the Arduino into the circuit. It first passes through the XΩ resistor, and then through the photoresistor. The resistance of the first resistor is static, however the resistance of the photoresistor changes depending on the light level. The more light, the more/less resistance there is. We then use black wires to ground the signal. Two wires are used, connecting the resistor to the blue line of the breadboard, and the blue line of the breadboard to the Arduino ground pin, as later we'll also ground our LEDs by connecting them to the blue line of the breadboard.
+![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/wire-photoresistor.png?raw=true)
 
-The orange wire is used to carry the voltage/current into the Arduino. We connect to pin X, as this pin is able to read the analogue value of the voltage/current as a 10-bit signal. This allows us to read an arbitrary unit numerical value, instead of just whether the signal is high or low.
+A red wire takes a 5V voltage from the Arduino into the circuit. The voltage passes through the 5KΩ resistor, which then goes through the photoresistor. The black wires then carry the voltage through to the ground pin of the Arduino. The two resistors wired in this way creates a potential divider circuit. I've deliberately used two black wires to ground the singal, one connecting the potential divider to the negative rail, and one connected the negative rail to the Arduino, as this will let me ground the LEDs by connecting them to the negative rail later.
 
-You might wonder why two resistors are used?
+The resistance of the first resistor is static, however the resistance of the photoresistor changes depending on the light level. The more light, the more/less resistance there is. This means the more light their is, the lower the signal from the potential divider there will be.
+
+The orange wire is used to carry the signal from the potential divider into the Arduino. We connect to pin A0, as the analog pins are able to read the analog signal as a 10-bit number. This allows us to read an arbitrary unit numerical value, instead of just whether the signal is high or low like with digital pins.
 
 # Step 2: Decoding The Signal in Code
-By reading the signal carried by the orange wire, we can now read how much light the photocell is detecting. The more light, the higher/lower the signal will be.
+By reading the signal carried by the orange wire, we can now read how much light the photocell is detecting. The more light, the smaller the signal will be.
 
-We can program our `setup()` function to read this analogue signal into the Arduino. In the meantime, we will also set up pins 10-13 as digital outputs, which we will use to output the 4 most significant bits of the signal.
+We can program our `setup()` function to read this analog signal into the Arduino. In the meantime, we will also set up pins 10-13 as digital outputs, which we will use to output the 4 most significant bits of the signal to the LEDs.
 
 ```C
 void setup() {
@@ -39,7 +43,7 @@ void setup() {
 }
 ```
 
-Next we will create a function that will take that signal as input, and output the value of a particular bit as a boolean. Here `x` is the value being decoded and `k` is which bit we are decoding (0-indexed).
+Next we will create a function that will take that signal as input, and output the value of a particular bit as a boolean. Here `x` is the value being decoded and `k` is which bit we are decoding (0-indexed). (Though it might be slightly erroneous to make this it's own function, it makes the loop code more readable, and the compiler will likely inline the function for us anyway.)
 
 ```C
 bool decode(int x, int k) {
@@ -47,7 +51,7 @@ bool decode(int x, int k) {
 }
 ```
 
-We now have everything we need to create our loop function.
+We now have everything we need to create our loop function. Here we store the signal from the potential divider in variable `s`, output that value to the serial port, and then one by one decode each bit and update our digital outputs accordingly.
 
 ```C
 void loop() {
@@ -64,15 +68,14 @@ void loop() {
 You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder).
 
 # Step 3: Displaying The Decoded Signal
-Now that our code is decoding the signal, we want to display that using our four LEDs. Each LED has it's own XΩ resistor. They are wired the same, except that they each connect to a different pin on the Arduino. As we want the left-most LED to display the most significant bit (the 10th bit), we will connect it to pin 13.
+Now that our code is decoding and outputting the signal, we want to display that using our four LEDs. Each LED has it's own 220Ω resistor. They are wired the same, except that each connects to a different pin on the Arduino. As we want the left-most LED to display the most significant bit (the 10th bit), we will connect it to pin 13.
+
+![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/wire-leds.png?raw=true)
+
+Depending on what colour and make LEDs you use, you may need to tweak what strength of the LED resistors to achieve the desired brightness
 
 # There you have it!
 
-# Checklist
-* a description of the experiment(s)
-plenty of photos and videos documenting the experiment(s)
-* technical information, including code and circuit diagrams
-* a list of the components used
-* links to any outside sources of information used in the experiment(s)
-* a record of any troubleshooting required: what went wrong, and how did you overcome it?
-* an evaluation: what was learned, how could it be improved, how could it be used?
+![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/final-circuit-photo.jpg?raw=true)
+
+This was a fun first experiment into working with electronic components, which went smoothly enough I'm a little suspicious. Though, I did have to experiment with using different strengths of resistor to achieve the desired results with the LEDs and potential divider. Through experimentation in TinkerCAD, I also came to realise the amount of light received by the photoresistor and the output of the potential divider were not linearly correlated. As the amount of light received when from bright to dark, the signal would first decrease slowly, then start decreasing faster and faster. For this experiment that wasn't a problem, but it did mean it was much easier to deliberately create binary numbers 0-3 than 4-7 using the LEDs. This could be resolved in code by converting the non-linear input of the potential divider into a linear one.
