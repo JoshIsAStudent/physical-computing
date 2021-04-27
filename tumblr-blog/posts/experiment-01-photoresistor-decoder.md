@@ -3,11 +3,10 @@
 
 For my first experiment I took the 10-bit analog output of a photoresistor (also known as a photocell), decoded the 4 most significant bits in code running on the Arduino, and then displayed those four bits on LEDs.
 
-![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/demo-video.mov?raw=true)
+See a demo on [YouTube](https://youtu.be/dQw4w9WgXcQ).
 
 # Components Used
 This experiment uses the Arduino UNO R3 Project Starter Kit.
-
 * 1 x UNO R3 Controller Board (the Arduino)
 * 1 x Breadboard
 * Breadboard jumper wires
@@ -19,7 +18,7 @@ This experiment uses the Arduino UNO R3 Project Starter Kit.
 # Step 1: Wiring The Photoresistor
 I first wired the photoresistor as shown below, using the 5KΩ resistor.
 
-![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/wire-photoresistor.png?raw=true)
+![](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/experiment-01-photoresistor-decoder/wire-photoresistor.png)
 
 A red wire takes a 5V voltage from the Arduino into the circuit. The voltage passes through the 5KΩ resistor, which then goes through the photoresistor. The black wires then carry the voltage through to the ground pin of the Arduino. The two resistors wired in this way creates a potential divider circuit. I've deliberately used two black wires to ground the singal, one connecting the potential divider to the negative rail, and one connected the negative rail to the Arduino, as this will let me ground the LEDs by connecting them to the negative rail later.
 
@@ -65,17 +64,17 @@ void loop() {
 }
 ```
 
-You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder).
+You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/experiment-01-photoresistor-decoder/01-photoresistor-decoder).
 
 # Step 3: Displaying The Decoded Signal
 Now that our code is decoding and outputting the signal, we want to display that using our four LEDs. Each LED has it's own 220Ω resistor. They are wired the same, except that each connects to a different pin on the Arduino. As we want the left-most LED to display the most significant bit (the 10th bit), we will connect it to pin 13.
 
-![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/wire-leds.png?raw=true)
+![](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/experiment-01-photoresistor-decoder/wire-leds.png)
 
 Depending on what colour and make LEDs you use, you may need to tweak what strength of the LED resistors to achieve the desired brightness
 
 # There you have it!
 
-![](https://github.com/JoshIsAStudent/physical-computing/blob/main/01-photoresistor-decoder/final-circuit-photo.jpg?raw=true)
+![](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/experiment-01-photoresistor-decoder/final-circuit-photo.jpg)
 
 This was a fun first experiment into working with electronic components, which went smoothly enough I'm a little suspicious. Though, I did have to experiment with using different strengths of resistor to achieve the desired results with the LEDs and potential divider. Through experimentation in TinkerCAD, I also came to realise the amount of light received by the photoresistor and the output of the potential divider were not linearly correlated. As the amount of light received when from bright to dark, the signal would first decrease slowly, then start decreasing faster and faster. For this experiment that wasn't a problem, but it did mean it was much easier to deliberately create binary numbers 0-3 than 4-7 using the LEDs. This could be resolved in code by converting the non-linear input of the potential divider into a linear one.

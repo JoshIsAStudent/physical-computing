@@ -2,7 +2,7 @@
 *Experiment conducted 2021/03/09*
 
 ## Components Used
-@standard-components
+?[standard-components]
 
 ## Step 1: Wiring the stepper motor
 []<[Info on how a stepper motor works included in my 4a notes]

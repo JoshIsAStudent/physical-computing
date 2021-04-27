@@ -33,7 +33,7 @@ for experiment in experiments:
 
         # Include standard components
         post = post.replace(
-            "@standard-components",
+            "?[standard-components]",
             "* 1 x UNO R3 Controller Board (the Arduino)\n"\
             "* 1 x Breadboard\n"\
             "* Breadboard jumper wires"
@@ -42,14 +42,22 @@ for experiment in experiments:
         # Make image links route directly to github
         post = re.sub(
             r"!\[(.*?)\]\((.*?)\)",
-            r"![\1](https://github.com/JoshIsAStudent/physical-computing/blob/main/" + experiment + r"/\2?raw=true)",
+            r"![\1](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/" + experiment + r"/\2)",
             post
         )
 
         # Complete code template
-        post = post.replace(
-            "@complete-code",
-            "You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/blob/main/" + experiment + ")."
+        post = re.sub(
+            r"\?\[complete-code\]\((.+?)\)",
+            "You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/" + experiment + "/\\1).",
+            post
+        )
+
+        # Youtube video template
+        post = re.sub(
+            r"\?\[youtube-video\]\((.+?)\)",
+            "See a demo on [YouTube](https://youtu.be/\\1).",
+            post
         )
 
         # Tidy new lines
