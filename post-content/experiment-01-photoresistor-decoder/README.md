@@ -23,6 +23,8 @@ The resistance of the first resistor is static, however the resistance of the ph
 
 The orange wire is used to carry the signal from the potential divider into the Arduino. We connect to pin A0, as the analog pins are able to read the analog signal as a 10-bit number. This allows us to read an arbitrary unit numerical value, instead of just whether the signal is high or low like with digital pins.
 
+[]>[Mention explicitly the analog to digital converter at the end of step 1]
+
 ## Step 2: Decoding The Signal in Code
 By reading the signal carried by the orange wire, we can now read how much light the photocell is detecting. The more light, the smaller the signal will be.
 
