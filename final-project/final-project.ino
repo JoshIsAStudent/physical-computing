@@ -26,135 +26,135 @@ struct Program {
 // Note to self: Move these classess into seperate files
 class AMachine;
 class Hardware {
-public:
-  void start();
-  void calibrate();
-  void loop();
-  bool read();
-  void write(bool value);
-  void move(int amt);
-  void msg(String msg);
+  public:
+    void start();
+    void calibrate();
+    void loop();
+    bool read();
+    void write(bool value);
+    void move(int amt);
+    void msg(String msg);
 };
 
 // A-Machine
 // This class simulates an A-Machine, better known as the Turning Machine. It manages the flow of the program, and delegates controlling the actual hardware to an instance of the Hardware class.
 class AMachine {
-public:
-  size_t state = 0;
-  bool running = false;
-  Program program;
-  Hardware* hardware;
+  public:
+    size_t state = 0;
+    bool running = false;
+    Program program;
+    Hardware* hardware;
 
-  void step() {
-    if (!running) {
-      return;
+    void step() {
+      if (!running) {
+        return;
+      }
+
+      if (state >= program.stateCount) {
+        halt("Invalid state");
+        return;
+      }
+
+      bool bit = hardware->read();
+      Instruction ins = bit ?
+                        program.states[state].onTrue :
+                        program.states[state].onFalse;
+
+      if (ins.halt) {
+        halt("Ended successfully");
+        return;
+      }
+
+      if (bit != ins.write) {
+        hardware->write(ins.write);
+      }
+
+      hardware->move(ins.move);
+
+      state = ins.state;
     }
 
-    if (state >= program.stateCount) {
-      halt("Invalid state");
-      return;
+    void halt(String msg) {
+      running = false;
+      hardware->msg("Machine stopped in state #" + state + " (" + msg + ")";
     }
-
-    bool bit = hardware->read();
-    Instruction ins = bit ?
-    program.states[state].onTrue :
-    program.states[state].onFalse;
-
-    if (ins.halt) {
-      halt("Ended successfully");
-      return;
-    }
-
-    if (bit != ins.write) {
-      hardware->write(ins.write);
-    }
-
-    hardware->move(ins.move);
-
-    state = ins.state;
-  }
-
-  void halt(String msg) {
-    running = false;
-    hardware->msg(String("Machine stopped in state #").concat(String(state)).concat(" (").concat(msg).concat(")");
-  }
 
 };
 
 // Hardware
 // This class controls all of the Arduino hardware and electronics. This includes that used by the A-Machine, as well as that used for maintenance mode.
 class Hardware {
-public:
-  // Settings - Input pins
-  const uint8_t photoresistorPin = A0;
+  public:
+    // Settings - Input pins
+    const uint8_t photoresistorPin = A0;
 
-  // Settings - Output pins
-  const uint8_t runningLedPin = 1;
-  const uint8_t maintenanceLedPin = 2;
-  const uint8_t signalLedPin = 3;
-  const uint8_t writeMotorPin = 6;
-  const uint8_t discMotorPins[] = {8, 9, 10, 11};
+    // Settings - Output pins
+    const uint8_t runningLedPin = 1;
+    const uint8_t maintenanceLedPin = 2;
+    const uint8_t signalLedPin = 3;
+    const uint8_t writeMotorPin = 6;
+    const uint8_t discMotorPins[] = {8, 9, 10, 11};
 
-  // Settings - Motors
-  const float discMotorRPM = 16;
-  const int discMotorStepsPerRevolution = 2048;
-  const int discMotorStepsPerBit = 4;
+    // Settings - Motors
+    const float discMotorRPM = 16;
+    const int discMotorStepsPerRevolution = 2048;
+    const int discMotorStepsPerBit = 4;
 
-  // Interfaces
-  Stepper discMotor;
-  Servo writeMotor;
-  AMachine* amachine;
+    // Interfaces
+    Stepper discMotor;
+    Servo writeMotor;
+    AMachine* amachine;
 
-  // Variables
-  int lightThreshold;
-  bool maintenanceMode = true;
+    // Variables
+    int lightThreshold;
+    bool maintenanceMode = true;
 
-  void start() {
-    Serial.begin(9600);
+    void start() {
+      Serial.begin(9600);
 
-    pinMode(photoresistorPin, INPUT);
+      pinMode(photoresistorPin, INPUT);
 
-    pinMode(runningLedPin, OUTPUT);
-    pinMode(maintenanceLedPin, OUTPUT);
-    pinMode(signalLedPin, OUTPUT);
-    
-    writeMotor.attach(writeMotorPin);
-    discMotor(discMotorStepsPerRevolution, discMotorPins[0], discMotorPins[1], discMotorPins[2], discMotorPins[3]);
-    
-    calibrate()
-  }
+      pinMode(runningLedPin, OUTPUT);
+      pinMode(maintenanceLedPin, OUTPUT);
+      pinMode(signalLedPin, OUTPUT);
 
-  void calibrate() {
-    // ask for no block, wait signal, read over time, ask for block, wait signal, read over time
-    lightThreshold = (low+high)/2;
-  }
+      writeMotor.attach(writeMotorPin);
+      discMotor(discMotorStepsPerRevolution, discMotorPins[0], discMotorPins[1], discMotorPins[2], discMotorPins[3]);
 
-  void loop() {
-    digitalWrite(amachine->running?HIGH:LOW, runningPin);
-    digitalWrite(maintenanceMode?HIGH:LOW, maintenancePin);
-  }
-
-  bool read() {
-    // compare light reading to calibrated values
-  }
-
-  void write(bool value) {
-    if (value) {
-      writeMotor.rotate(writeMotorPositionA);
-      writeMotor.rotate(writeMotorPositionB);
-    } else {
-      writeMotor.rotate(writeMotorPositionB);
-      writeMotor.rotate(writeMotorPositionA);
+      calibrate()
     }
-  }
 
-  void move(int amt) {
-    discMotor.rotate(amt*stepsPerBit);
-  }
+    void calibrate() {
+      // ask for no block, wait signal, read over time, ask for block, wait signal, read over time
+      lightThreshold = (low + high) / 2;
+    }
 
-  void msg(String msg) { // This function is not really necessary for this program, but I created it so that other parts of the code besides the Hardware class weren't interacting with the serial port directly.
-    Serial.println(msg);
-  }
+    void loop() {
+      digitalWrite(amachine->running ? HIGH : LOW, runningPin);
+      digitalWrite(maintenanceMode ? HIGH : LOW, maintenancePin);
+    }
+
+    bool read() {
+      // compare light reading to calibrated values
+    }
+
+    void write(bool value) {
+      if (value) {
+        writeMotor.rotate(writeMotorPositionA);
+        writeMotor.rotate(writeMotorPositionB);
+      } else {
+        writeMotor.rotate(writeMotorPositionB);
+        writeMotor.rotate(writeMotorPositionA);
+      }
+    }
+
+    void move(int amt) {
+      discMotor.rotate(amt * stepsPerBit);
+    }
+
+    void msg(String msg) { // This function is not really necessary for this program, but I created it so that other parts of the code besides the Hardware class weren't interacting with the serial port directly.
+      Serial.println(msg);
+    }
 
 };
 
