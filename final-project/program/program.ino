@@ -89,11 +89,11 @@ class Hardware {
     const uint8_t photoresistorPin = A0;
 
     // Settings - Output pins
-    const uint8_t runningLedPin = 1;
-    const uint8_t maintenanceLedPin = 2;
-    const uint8_t signalLedPin = 3;
+    const uint8_t maintenanceLedPin = 4;
+    const uint8_t runningLedPin = 3;
+    const uint8_t signalLedPin = 2;
     const uint8_t writeMotorPin = 6;
-    const uint8_t discMotorPins[] = {8, 9, 10, 11};
+    const uint8_t discMotorPins[] = {8, 10, 9, 11};
 
     // Settings - Motors
     const float discMotorRPM = 16;
