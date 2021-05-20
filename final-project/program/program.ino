@@ -106,9 +106,10 @@ class Hardware {
     AMachine* amachine;
 
     // Variables
-    int lightThreshold;
+    int lightThreshold = 1024 / 2;
     bool maintenanceMode = true;
 
+    // Program methods
     void start() {
       Serial.begin(9600);
 
@@ -120,40 +121,67 @@ class Hardware {
 
       writeMotor.attach(writeMotorPin);
       discMotor(discMotorStepsPerRevolution, discMotorPins[0], discMotorPins[1], discMotorPins[2], discMotorPins[3]);
-
-      calibrate()
-    }
-
-    void calibrate() {
-      // ask for no block, wait signal, read over time, ask for block, wait signal, read over time
-      lightThreshold = (low + high) / 2;
     }
 
     void loop() {
-      digitalWrite(amachine->running ? HIGH : LOW, runningPin);
-      digitalWrite(maintenanceMode ? HIGH : LOW, maintenancePin);
+      digitalWrite(runningPin, amachine->running ? HIGH : LOW, );
+      digitalWrite(maintenancePin, maintenanceMode ? HIGH : LOW, );
     }
 
+    // A Machine methods
     bool read() {
-      // compare light reading to calibrated values
+      return readLight > lightThreshold;
     }
 
     void write(bool value) {
       if (value) {
-        writeMotor.rotate(writeMotorPositionA);
-        writeMotor.rotate(writeMotorPositionB);
+        writeMotor.write(0);
+        writeMotor.write(180);
       } else {
-        writeMotor.rotate(writeMotorPositionB);
-        writeMotor.rotate(writeMotorPositionA);
+        writeMotor.write(180);
+        writeMotor.write(0);
       }
     }
 
     void move(int amt) {
-      discMotor.rotate(amt * stepsPerBit);
+      discMotor.step(amt * stepsPerBit);
     }
 
-    void msg(String msg) { // This function is not really necessary for this program, but I created it so that other parts of the code besides the Hardware class weren't interacting with the serial port directly.
+    void msg(String msg) { // This function is not really necessary for this program, but does ensure that the Hardward class is the only class directly interfacing with the serial port.
       Serial.println(msg);
+    }
+
+    // Photoresistor methods
+    void calibrateLight() {
+      msg("Please ensure the read head photoresitor is blocked");
+      countdown();
+      int low = readLight();
+
+      msg("Please ensure the read head photoresitor is unblocked");
+      countdown();
+      int high = readLight();
+
+      lightThreshold = (low + high) / 2;
+      msg("New light threshold: " + lightThreshold)
+    }
+
+    int readLight() {
+      float total = 0;
+      for (int i = 0; i < 10; i++) {
+        total += analogRead(photoresistorPin);
+        delay(20);
+      }
+      return total / 10;
+    }
+
+    // Countdown method, used in other methods
+    void countdown() {
+      for (size_t i = 3; i > 1; i++) {
+        Serial.print(String(i).concat(", "));
+        delay(1000);
+      }
+      Serial.println("1.");
+      delay(1000);
     }
 
 };
