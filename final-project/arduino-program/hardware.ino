@@ -2,8 +2,11 @@
 
 // Program methods
 Hardware::Hardware() :
-  discMotor(discMotorStepsPerRevolution, discMotorPins[0], discMotorPins[1], discMotorPins[2], discMotorPins[3])
-{
+  discMotor(discMotorStepsPerRevolution, discMotorPins[0], discMotorPins[1], discMotorPins[2], discMotorPins[3]),
+  irReceiver(irReceiverPin)
+{}
+
+void Hardware::setup() {
   Serial.begin(9600);
 
   pinMode(photoresistorPin, INPUT);
@@ -13,11 +16,14 @@ Hardware::Hardware() :
   pinMode(signalLedPin, OUTPUT);
 
   writeMotor.attach(writeMotorPin);
+
+  irReceiver.enableIRIn();
 }
 
 void Hardware::loop() {
   digitalWrite(runningLedPin, amachine->running ? HIGH : LOW );
   digitalWrite(maintenanceLedPin, maintenanceMode ? HIGH : LOW );
+  handleRemote();
 }
 
 // A Machine methods
@@ -64,6 +70,58 @@ int Hardware::readLight() {
     delay(20);
   }
   return total / 10;
+}
+
+// Infrared Remote methods
+void Hardware::handleRemote() {
+
+  // Decode results and return from the function if there are no results
+  decode_results results;
+  if (!irReceiver.decode(&results)) return;
+
+  // Turn on the LED
+  digitalWrite(signalLedPin, HIGH);
+
+  // Trigger button specific function
+  switch (results.value)
+  {
+    case 0xFFA25D:
+      Serial.println("[Power]");
+      amachine->running = !amachine->running;
+      break;
+
+    case 0xFF02FD:
+      Serial.println("[Play/Pause]");
+      maintenanceMode = !maintenanceMode;
+      break;
+
+    case 0xFFE21D: Serial.println("[Function/Stop]"); break;
+    case 0xFF629D: Serial.println("[Volume +]"); break;
+    case 0xFFA857: Serial.println("[Volume -]"); break;
+    case 0xFF22DD: Serial.println("[Fast back]"); break;
+    case 0xFFC23D: Serial.println("[Fast forward]"); break;
+    case 0xFFE01F: Serial.println("[Down]"); break;
+    case 0xFF906F: Serial.println("[Up]"); break;
+    case 0xFF9867: Serial.println("[Eq]"); break;
+    case 0xFFB04F: Serial.println("[St/Rept]"); break;
+    case 0xFF6897: Serial.println("[0]"); break;
+    case 0xFF30CF: Serial.println("[1]"); break;
+    case 0xFF18E7: Serial.println("[2]"); break;
+    case 0xFF7A85: Serial.println("[3]"); break;
+    case 0xFF10EF: Serial.println("[4]"); break;
+    case 0xFF38C7: Serial.println("[5]"); break;
+    case 0xFF5AA5: Serial.println("[6]"); break;
+    case 0xFF42BD: Serial.println("[7]"); break;
+    case 0xFF4AB5: Serial.println("[8]"); break;
+    case 0xFF52AD: Serial.println("[9]"); break;
+    case 0xFFFFFFFF: Serial.println("[Repeat]"); break;
+    default: Serial.println("[Unknown]"); break;
+  }
+
+  // Resume reciving and turn off LED
+  irReceiver.resume();
+  delay(20);
+  digitalWrite(signalLedPin, LOW);
 }
 
 // Countdown method, used in other methods

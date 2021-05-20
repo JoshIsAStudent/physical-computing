@@ -9,6 +9,7 @@ Hardware hardware;
 void setup() {
   amachine.hardware = &hardware;
   hardware.amachine = &amachine;
+  hardware.setup();
 }
 
 // Loop - Is run repeated by the Arduino

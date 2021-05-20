@@ -6,6 +6,7 @@
 
 #include <Servo.h>
 #include <Stepper.h>
+#include "IRremote.h"
 class AMachine; // Forward declaration of Hardware class so that we can create a pointer to it. If we included it instead, `machine.h` and `hardware.h` would have cyclic include dependicies
 
 class Hardware {
@@ -29,6 +30,7 @@ class Hardware {
     // Interfaces
     Stepper discMotor;
     Servo writeMotor;
+    IRrecv irReceiver;
     AMachine* amachine;
 
     // Variables
@@ -37,6 +39,7 @@ class Hardware {
 
     // Program methods
     Hardware();
+    void setup();
     void loop();
 
     // A Machine methods
@@ -48,6 +51,9 @@ class Hardware {
     // Photoresistor methods
     void calibrateLight();
     int readLight() ;
+
+    // Infrared Remote methods
+    void handleRemote();
 
     // Countdown method, used in other methods
     void countdown();
