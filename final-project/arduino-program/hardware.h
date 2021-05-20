@@ -1,10 +1,13 @@
-// Include the libraries we will need. These libraries handle some of the complex parts of controlling the eltronics for us, so we don't have to!
-#include <Servo.h>
-#include <Stepper.h>
-class AMachine // Forward declaration of Hardware class so that we can create a pointer to it. If we included it instead, `machine.h` and `hardware.h` would have cyclic include dependicies
-
 // Hardware
 // This class controls all of the Arduino hardware and electronics. This includes that used by the A-Machine, as well as that used for maintenance mode.
+
+#ifndef HARDWARE_H
+#define HARDWARE_H
+
+#include <Servo.h>
+#include <Stepper.h>
+class AMachine; // Forward declaration of Hardware class so that we can create a pointer to it. If we included it instead, `machine.h` and `hardware.h` would have cyclic include dependicies
+
 class Hardware {
   public:
     // Settings - Input pins
@@ -16,7 +19,7 @@ class Hardware {
     const uint8_t signalLedPin = 2;
     const uint8_t writeMotorPin = 5;
     const uint8_t irReceiverPin = 6;
-    const uint8_t discMotorPins[] = {8, 10, 9, 11};
+    const uint8_t discMotorPins[4] = {8, 10, 9, 11};
 
     // Settings - Motors
     const float discMotorRPM = 16;
@@ -33,7 +36,7 @@ class Hardware {
     bool maintenanceMode = true;
 
     // Program methods
-    void setup();
+    Hardware();
     void loop();
 
     // A Machine methods
@@ -49,3 +52,5 @@ class Hardware {
     // Countdown method, used in other methods
     void countdown();
 };
+
+#endif

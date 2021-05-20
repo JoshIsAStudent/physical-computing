@@ -1,42 +1,40 @@
-// A-Machine
-// This class simulates an A-Machine, better known as the Turning Machine. It manages the flow of the program, and delegates controlling the actual hardware to an instance of the Hardware class.
-
 #include "amachine.h"
 
-class AMachine {
-  public:
-    void step() {
-      if (!running) {
-        return;
-      }
+void AMachine::step() {
+  if (!running) {
+    return;
+  }
 
-      if (state >= program.stateCount) {
-        halt("Invalid state");
-        return;
-      }
+  if (state >= program.stateCount) {
+    halt("Invalid state");
+    return;
+  }
 
-      bool bit = hardware->read();
-      Instruction ins = bit ?
-                        program.states[state].onTrue :
-                        program.states[state].onFalse;
+  bool bit = hardware->read();
+  Instruction ins = bit ?
+                    program.states[state].onTrue :
+                    program.states[state].onFalse;
 
-      if (ins.halt) {
-        halt("Ended successfully");
-        return;
-      }
+  if (ins.halt) {
+    halt("Ended successfully");
+    return;
+  }
 
-      if (bit != ins.write) {
-        hardware->write(ins.write);
-      }
+  if (bit != ins.write) {
+    hardware->write(ins.write);
+  }
 
-      hardware->move(ins.move);
+  hardware->move(ins.move);
 
-      state = ins.state;
-    }
+  state = ins.state;
+}
 
-    void halt(String msg) {
-      running = false;
-      hardware->msg("Machine stopped in state #" + state + " (" + msg + ")";
-    }
-
-};
+void AMachine::halt(String msg) {
+  running = false;
+  String m("Machine stopped in state #");
+  m += state;
+  m += " (";
+  m += msg;
+  m += ")";
+  hardware->msg(m);
+}

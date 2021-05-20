@@ -1,6 +1,9 @@
 // A-Machine program data structure //
 // Stores programs that can be executed by the A-Machine.
 
+#ifndef PROGRAM_H
+#define PROGRAM_H
+
 struct Instruction { // The series of actions the A-Machine should take on a given step
   bool halt;  // If true, the A-Machine will stop running
   bool write; // Wheter it should write true or false to the current bit
@@ -18,3 +21,5 @@ struct Program {
   int stateCount;
   String name;
 };
+
+#endif
