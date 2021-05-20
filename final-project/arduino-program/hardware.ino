@@ -15,8 +15,6 @@ void Hardware::setup() {
   pinMode(maintenanceLedPin, OUTPUT);
   pinMode(signalLedPin, OUTPUT);
 
-  writeMotor.attach(writeMotorPin);
-
   irReceiver.enableIRIn();
 }
 
@@ -32,13 +30,24 @@ bool Hardware::read() {
 }
 
 void Hardware::write(bool value) {
+  //irReceiver.disableIRIn();
+  writeMotor.attach(writeMotorPin);
+  msg(value ? "TRUE" : "FALSE");
+
   if (value) {
     writeMotor.write(0);
+    delay(1000);
     writeMotor.write(180);
+    delay(1000);
   } else {
     writeMotor.write(180);
+    delay(1000);
     writeMotor.write(0);
+    delay(1000);
   }
+
+  writeMotor.detach();
+  //irReceiver.enableIRIn();
 }
 
 void Hardware::move(int amt) {
@@ -82,40 +91,48 @@ void Hardware::handleRemote() {
   // Turn on the LED
   digitalWrite(signalLedPin, HIGH);
 
-  // Trigger button specific function
-  switch (results.value)
-  {
-    case 0xFFA25D:
-      Serial.println("[Power]");
-      amachine->running = !amachine->running;
-      break;
+  if (results.value == 0xFF02FD) {
+    Serial.println("[Play/Pause]");
+    maintenanceMode = !maintenanceMode;
+  } else if (maintenanceMode) {
 
-    case 0xFF02FD:
-      Serial.println("[Play/Pause]");
-      maintenanceMode = !maintenanceMode;
-      break;
+    // Trigger button specific function
+    switch (results.value)
+    {
+      case 0xFFA25D:
+        Serial.println("[Power]");
+        amachine->running = !amachine->running;
+        break;
 
-    case 0xFFE21D: Serial.println("[Function/Stop]"); break;
-    case 0xFF629D: Serial.println("[Volume +]"); break;
-    case 0xFFA857: Serial.println("[Volume -]"); break;
-    case 0xFF22DD: Serial.println("[Fast back]"); break;
-    case 0xFFC23D: Serial.println("[Fast forward]"); break;
-    case 0xFFE01F: Serial.println("[Down]"); break;
-    case 0xFF906F: Serial.println("[Up]"); break;
-    case 0xFF9867: Serial.println("[Eq]"); break;
-    case 0xFFB04F: Serial.println("[St/Rept]"); break;
-    case 0xFF6897: Serial.println("[0]"); break;
-    case 0xFF30CF: Serial.println("[1]"); break;
-    case 0xFF18E7: Serial.println("[2]"); break;
-    case 0xFF7A85: Serial.println("[3]"); break;
-    case 0xFF10EF: Serial.println("[4]"); break;
-    case 0xFF38C7: Serial.println("[5]"); break;
-    case 0xFF5AA5: Serial.println("[6]"); break;
-    case 0xFF42BD: Serial.println("[7]"); break;
-    case 0xFF4AB5: Serial.println("[8]"); break;
-    case 0xFF52AD: Serial.println("[9]"); break;
-    case 0xFFFFFFFF: Serial.println("[Repeat]"); break;
-    default: Serial.println("[Unknown]"); break;
+      case 0xFF629D: Serial.println("[Volume +]");
+        this->write(true);
+        break;
+
+      case 0xFFA857: Serial.println("[Volume -]");
+        this->write(false);
+        break;
+
+      case 0xFFE21D: Serial.println("[Function/Stop]"); break;
+
+      case 0xFF22DD: Serial.println("[Fast back]"); break;
+      case 0xFFC23D: Serial.println("[Fast forward]"); break;
+      case 0xFFE01F: Serial.println("[Down]"); break;
+      case 0xFF906F: Serial.println("[Up]"); break;
+      case 0xFF9867: Serial.println("[Eq]"); break;
+      case 0xFFB04F: Serial.println("[St/Rept]"); break;
+      case 0xFF6897: Serial.println("[0]"); break;
+      case 0xFF30CF: Serial.println("[1]"); break;
+      case 0xFF18E7: Serial.println("[2]"); break;
+      case 0xFF7A85: Serial.println("[3]"); break;
+      case 0xFF10EF: Serial.println("[4]"); break;
+      case 0xFF38C7: Serial.println("[5]"); break;
+      case 0xFF5AA5: Serial.println("[6]"); break;
+      case 0xFF42BD: Serial.println("[7]"); break;
+      case 0xFF4AB5: Serial.println("[8]"); break;
+      case 0xFF52AD: Serial.println("[9]"); break;
+      case 0xFFFFFFFF: Serial.println("[Repeat]"); break;
+      default: Serial.println("[Unknown]"); break;
+    }
   }
 
   // Resume reciving and turn off LED
