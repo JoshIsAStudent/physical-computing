@@ -23,7 +23,7 @@ class Hardware {
     const uint8_t discMotorPins[4] = {8, 10, 9, 11};
 
     // Settings - Motors
-    const float discMotorRPM = 16;
+    const float discMotorRPM = 17;
     const int discMotorStepsPerRevolution = 2048;
     const int discMotorStepsPerBit = 4;
 
@@ -33,9 +33,14 @@ class Hardware {
     IRrecv irReceiver;
     AMachine* amachine;
 
+    // Maintenance mode
+    bool maintenanceMode = true;
+    const int mmDiscStepAmt[5] = {10, 100, 1000, discMotorStepsPerRevolution / 4, discMotorStepsPerRevolution};
+    const int mmDiscStepAmtCount = 5;
+    int mmDiscStepAmtInx = mmDiscStepAmtCount - 1;
+
     // Variables
     int lightThreshold = 1024 / 2;
-    bool maintenanceMode = true;
 
     // Program methods
     Hardware();

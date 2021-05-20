@@ -15,6 +15,8 @@ void Hardware::setup() {
   pinMode(maintenanceLedPin, OUTPUT);
   pinMode(signalLedPin, OUTPUT);
 
+  discMotor.setSpeed(discMotorRPM);
+
   irReceiver.enableIRIn();
 }
 
@@ -104,20 +106,41 @@ void Hardware::handleRemote() {
         amachine->running = !amachine->running;
         break;
 
-      case 0xFF629D: Serial.println("[Volume +]");
+      case 0xFF629D:
+        Serial.println("[Volume +]");
         this->write(true);
         break;
 
-      case 0xFFA857: Serial.println("[Volume -]");
+      case 0xFFA857:
+        Serial.println("[Volume -]");
         this->write(false);
         break;
 
-      case 0xFFE21D: Serial.println("[Function/Stop]"); break;
+      case 0xFFC23D:
+        Serial.println("[Fast forward]");
+        discMotor.step(mmDiscStepAmt[mmDiscStepAmtInx]);
+        Serial.println(mmDiscStepAmt[mmDiscStepAmtInx]);
+        break;
 
-      case 0xFF22DD: Serial.println("[Fast back]"); break;
-      case 0xFFC23D: Serial.println("[Fast forward]"); break;
-      case 0xFFE01F: Serial.println("[Down]"); break;
-      case 0xFF906F: Serial.println("[Up]"); break;
+      case 0xFF22DD:
+        Serial.println("[Fast back]");
+        discMotor.step(-mmDiscStepAmt[mmDiscStepAmtInx]);
+        Serial.println(-mmDiscStepAmt[mmDiscStepAmtInx]);
+        break;
+
+      case 0xFF906F:
+        Serial.println("[Up]");
+        if (mmDiscStepAmtInx < mmDiscStepAmtCount - 1) mmDiscStepAmtInx++;
+        msg(String(mmDiscStepAmt[mmDiscStepAmtInx]) + " steps");
+        break;
+
+      case 0xFFE01F:
+        Serial.println("[Down]");
+        if (mmDiscStepAmtInx > 0) mmDiscStepAmtInx--;
+        msg(String(mmDiscStepAmt[mmDiscStepAmtInx]) + " steps");
+        break;
+
+      case 0xFFE21D: Serial.println("[Function/Stop]"); break;
       case 0xFF9867: Serial.println("[Eq]"); break;
       case 0xFFB04F: Serial.println("[St/Rept]"); break;
       case 0xFF6897: Serial.println("[0]"); break;
