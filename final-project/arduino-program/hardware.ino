@@ -116,6 +116,13 @@ void Hardware::handleRemote() {
         this->write(false);
         break;
 
+      case 0xFF9867: Serial.println("[Eq]");
+        writeMotor.attach(writeMotorPin);
+        writeMotor.write(90);
+        delay(1000);
+        writeMotor.detach();
+        break;
+
       case 0xFFC23D:
         Serial.println("[Fast forward]");
         discMotor.step(mmDiscStepAmt[mmDiscStepAmtInx]);
@@ -141,7 +148,6 @@ void Hardware::handleRemote() {
         break;
 
       case 0xFFE21D: Serial.println("[Function/Stop]"); break;
-      case 0xFF9867: Serial.println("[Eq]"); break;
       case 0xFFB04F: Serial.println("[St/Rept]"); break;
       case 0xFF6897: Serial.println("[0]"); break;
       case 0xFF30CF: Serial.println("[1]"); break;

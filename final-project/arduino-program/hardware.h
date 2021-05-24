@@ -35,8 +35,8 @@ class Hardware {
 
     // Maintenance mode
     bool maintenanceMode = true;
-    const int mmDiscStepAmt[5] = {10, 100, 1000, discMotorStepsPerRevolution / 4, discMotorStepsPerRevolution};
-    const int mmDiscStepAmtCount = 5;
+    const int mmDiscStepAmt[6] = {20, 50, 100, 1000, discMotorStepsPerRevolution / 4, discMotorStepsPerRevolution};
+    const int mmDiscStepAmtCount = 6;
     int mmDiscStepAmtInx = mmDiscStepAmtCount - 1;
 
     // Variables
