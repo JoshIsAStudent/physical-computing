@@ -147,8 +147,16 @@ void Hardware::handleRemote() {
         msg(String(mmDiscStepAmt[mmDiscStepAmtInx]) + " steps");
         break;
 
-      case 0xFFE21D: Serial.println("[Function/Stop]"); break;
-      case 0xFFB04F: Serial.println("[St/Rept]"); break;
+      case 0xFFB04F:
+        Serial.println("[St/Rept]");
+        Serial.println(readLight());
+        //calibrateLight()
+        break;
+
+      case 0xFFE21D:
+        Serial.println("[Function/Stop]");
+        Serial.println(read());
+        break;
       case 0xFF6897: Serial.println("[0]"); break;
       case 0xFF30CF: Serial.println("[1]"); break;
       case 0xFF18E7: Serial.println("[2]"); break;

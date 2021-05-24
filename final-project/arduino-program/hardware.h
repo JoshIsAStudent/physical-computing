@@ -12,7 +12,7 @@ class AMachine; // Forward declaration of Hardware class so that we can create a
 class Hardware {
   public:
     // Settings - Input pins
-    const uint8_t photoresistorPin = A0;
+    const uint8_t photoresistorPin = A5;
 
     // Settings - Output pins
     const uint8_t maintenanceLedPin = 4;
@@ -40,7 +40,7 @@ class Hardware {
     int mmDiscStepAmtInx = mmDiscStepAmtCount - 1;
 
     // Variables
-    int lightThreshold = 1024 / 2;
+    int lightThreshold = (730+1010) / 2;
 
     // Program methods
     Hardware();
