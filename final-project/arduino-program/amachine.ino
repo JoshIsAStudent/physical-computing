@@ -30,11 +30,13 @@ void AMachine::step() {
 }
 
 void AMachine::halt(String msg) {
-  running = false;
   String m("Machine stopped in state #");
   m += state;
   m += " (";
   m += msg;
   m += ")";
   hardware->msg(m);
+  
+  running = false;
+  state = 0;
 }

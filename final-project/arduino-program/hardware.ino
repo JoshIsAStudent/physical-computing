@@ -21,9 +21,9 @@ void Hardware::setup() {
 }
 
 void Hardware::loop() {
+  handleRemote();
   digitalWrite(runningLedPin, amachine->running ? HIGH : LOW );
   digitalWrite(maintenanceLedPin, maintenanceMode ? HIGH : LOW );
-  handleRemote();
 }
 
 // A Machine methods
