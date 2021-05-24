@@ -1,5 +1,6 @@
 #include "hardware.h"
 #include "amachine.h"
+#include "example-program.h"
 
 // Variables
 AMachine amachine;
@@ -7,6 +8,7 @@ Hardware hardware;
 
 // Setup - Is run once by the Arudino
 void setup() {
+  amachine.program = incrementFourBit();
   amachine.hardware = &hardware;
   hardware.amachine = &amachine;
   hardware.setup();

@@ -15,11 +15,6 @@ void AMachine::step() {
                     program.states[state].onTrue :
                     program.states[state].onFalse;
 
-  if (ins.halt) {
-    halt("Ended successfully");
-    return;
-  }
-
   if (bit != ins.write) {
     hardware->write(ins.write);
   }
@@ -27,6 +22,11 @@ void AMachine::step() {
   hardware->move(ins.move);
 
   state = ins.state;
+
+  if (ins.halt) {
+    halt("Ended successfully");
+    return;
+  }
 }
 
 void AMachine::halt(String msg) {
