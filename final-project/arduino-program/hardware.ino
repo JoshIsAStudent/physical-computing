@@ -30,35 +30,33 @@ void Hardware::loop() {
 bool Hardware::read() {
   discMotor.step(readHeadOffset);
   delay(500);
-  bool result = readLight() > lightThreshold;
+  
+  bool value = readLight() > lightThreshold;
+  msg(String("Read ") + (value ? "TRUE" : "FALSE"));
+  
   discMotor.step(-readHeadOffset);
   delay(500);
-  return result;
+  
+  return value;
 }
 
 void Hardware::write(bool value) {
-  //irReceiver.disableIRIn();
+  msg(String("Writing ") + (value ? "TRUE" : "FALSE"));
   writeMotor.attach(writeMotorPin);
-  msg(value ? "TRUE" : "FALSE");
 
-  if (value) {
-    writeMotor.write(180);
-    delay(1000);
-    writeMotor.write(0);
-    delay(1000);
-  } else {
-    writeMotor.write(0);
-    delay(1000);
-    writeMotor.write(180);
-    delay(1000);
+  bool realValue = !value;
+  while (realValue != value) {
+    writeMotor.write(writeMotor.read() == 0 ? 180 : 0);
+    delay(800);
+    realValue = read();
   }
 
   writeMotor.detach();
-  //irReceiver.enableIRIn();
 }
 
 void Hardware::move(int amt) {
   discMotor.step(amt * discMotorStepsPerBit);
+  delay(500);
 }
 
 void Hardware::msg(String msg) { // This function is not really necessary for this program, but does ensure that the Hardward class is the only class directly interfacing with the serial port.

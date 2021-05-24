@@ -25,7 +25,7 @@ class Hardware {
     // Settings - Motors
     const float discMotorRPM = 17;
     const int discMotorStepsPerRevolution = 2048;
-    const int discMotorStepsPerBit = 4;
+    const int discMotorStepsPerBit = discMotorStepsPerRevolution/4;
 
     // Interfaces
     Stepper discMotor;
