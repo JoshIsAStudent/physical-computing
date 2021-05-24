@@ -19,8 +19,8 @@ class Hardware {
     const uint8_t runningLedPin = 3;
     const uint8_t signalLedPin = 2;
     const uint8_t writeMotorPin = 6;
-    const uint8_t irReceiverPin = 13;
-    const uint8_t discMotorPins[4] = {8, 10, 9, 11};
+    const uint8_t irReceiverPin = 8;
+    const uint8_t discMotorPins[4] = {10, 12, 11, 13};
 
     // Settings - Motors
     const float discMotorRPM = 17;
