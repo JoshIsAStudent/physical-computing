@@ -41,6 +41,7 @@ class Hardware {
 
     // Variables
     int lightThreshold = (730+1010) / 2;
+    int readHeadOffset = -230;
 
     // Program methods
     Hardware();

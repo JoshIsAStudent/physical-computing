@@ -28,7 +28,12 @@ void Hardware::loop() {
 
 // A Machine methods
 bool Hardware::read() {
-  return readLight() > lightThreshold;
+  discMotor.step(readHeadOffset);
+  delay(500);
+  bool result = readLight() > lightThreshold;
+  discMotor.step(-readHeadOffset);
+  delay(500);
+  return result;
 }
 
 void Hardware::write(bool value) {
@@ -37,14 +42,14 @@ void Hardware::write(bool value) {
   msg(value ? "TRUE" : "FALSE");
 
   if (value) {
-    writeMotor.write(0);
-    delay(1000);
     writeMotor.write(180);
+    delay(1000);
+    writeMotor.write(0);
     delay(1000);
   } else {
-    writeMotor.write(180);
-    delay(1000);
     writeMotor.write(0);
+    delay(1000);
+    writeMotor.write(180);
     delay(1000);
   }
 
@@ -96,15 +101,16 @@ void Hardware::handleRemote() {
   if (results.value == 0xFF02FD) {
     Serial.println("[Play/Pause]");
     maintenanceMode = !maintenanceMode;
+    
+  } else if (results.value == 0xFFA25D) {
+    Serial.println("[Power]");
+    amachine->running = !amachine->running;
+    
   } else if (maintenanceMode) {
 
     // Trigger button specific function
     switch (results.value)
     {
-      case 0xFFA25D:
-        Serial.println("[Power]");
-        amachine->running = !amachine->running;
-        break;
 
       case 0xFF629D:
         Serial.println("[Volume +]");
