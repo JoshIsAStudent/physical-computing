@@ -3,7 +3,7 @@
 
 (Where less light equates to a bigger number)
 
-### Experiment 1
+## Experiment 1
 | Additional light source | No cardboard | 2.1cm cardboard | 6.1cm cardboard |
 | ----------------------- | ------------ | --------------- | --------------- |
 | Green LED               | 374          | 610 (+236)      | 687 (+313)      |
@@ -15,7 +15,7 @@
 Ranking 2.1cm: Green, Red, Blue, Yellow, None
 Ranking 6.1cm: Green, Red, Blue, Yellow, None
 
-### Experiment 2
+## Experiment 2
 | Additional light source | No cardboard | 2.1cm cardboard | 6.1cm cardboard |
 | ----------------------- | ------------ | --------------- | --------------- |
 | Green LED               | 405          | 627 (+222)      | 699 (+294)      |

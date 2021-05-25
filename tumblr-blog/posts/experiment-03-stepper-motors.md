@@ -1,4 +1,4 @@
-# Experiment 03: Stepper Motors
+# Experiment #3 : Stepper Motors
 *Experiment conducted 2021/03/09*
 
 # Components Used

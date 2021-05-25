@@ -1,4 +1,4 @@
-# Final Project 01 - Brainstorming
+# Final Project #1 : Brainstorming
 
 
 ## The Idea

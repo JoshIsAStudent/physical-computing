@@ -1,4 +1,4 @@
-# Final Project 01 - Brainstorming
+# Final Project #1 : Brainstorming
 
 # The Idea
 [Charles Babbage's mechanical computer](https://en.wikipedia.org/wiki/Charles_Babbage) and [Alan Turing's a-machine](https://en.wikipedia.org/wiki/Turing_machine) (better known as the Turing Machine) both live rent-free in my imagination, which leads to some esoteric ideas and trains of thought! For my project I want to create a primitive Turing Machine - where the machine itself is operated by the Arduino, which then reads and writes to a mechanical memory.

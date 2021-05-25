@@ -1,8 +1,9 @@
-# Experiment 01: Photoresistor to Binary Decoder
+# Experiment #1 : Photoresistor to Binary Decoder
 *Experiment conducted 2021/02/23*
 
 For my first experiment I took the [10-bit analog]>[is that the correct term?] output of a photoresistor (also known as a photocell), decoded the 4 most significant bits in code running on the Arduino, and then displayed those four bits on LEDs.
 
+[]>[Don't leave Rick here!!]
 ?[youtube-video](dQw4w9WgXcQ)
 
 ## [Components Used]>[Check that these are correct]

@@ -1,4 +1,4 @@
-# Experiment 02: The Icarus Servo
+# Experiment #2 : The Icarus Servo
 *Experiment conducted 2021/03/02*
 
 In this series of experiments I:

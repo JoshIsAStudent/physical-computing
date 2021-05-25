@@ -1,4 +1,4 @@
-# Experiment 02: The Icarus Servo
+# Experiment #2 : The Icarus Servo
 *Experiment conducted 2021/03/02*
 
 [In this series of experiments I:]>[This is a terrible way of laying out this information. It should be a paragraph really, I just couldn't figure out how to word it. Also, it's a different order to how I actually did it, and Ive changed by mind about how I'll actually write this, I'll write out what I actually did instead]
