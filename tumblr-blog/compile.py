@@ -2,7 +2,7 @@ import os
 import re
 
 unresolvedComments = 0
-commentRegex = r"\[(.*?)\]>\[(.*?)\]"
+commentRegex = r"\[(.*?)\][><]\[(.*?)\]"
 root = "../post-content"
 experiments = os.listdir(root)
 
