@@ -1,3 +1,6 @@
+### RANDOM ###
+https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
+
 ### UNORGANISED SCRAPS ###
 
 # Experiments Portfolio - 4a 2021.03.09
