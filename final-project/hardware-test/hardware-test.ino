@@ -2,8 +2,8 @@
 #include <Servo.h>
 
 // Stepper motor
-const int stepperStepsPerRevolution = 2048;  // change this to fit the number of steps per revolution
-const int stepperRPM = 15;         // Adjustable range of 28BYJ-48 stepper is 0~17 rpm
+const int stepperStepsPerRevolution = 2048;
+const int stepperRPM = 15;
 Stepper myStepper(stepperStepsPerRevolution, 8, 10, 9, 11);
 
 // Servo motor
@@ -75,5 +75,5 @@ void loop() {
       delay(10);
     }
   }
-  
+
 }

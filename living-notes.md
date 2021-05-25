@@ -1,5 +1,8 @@
 ### RANDOM ###
-https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
+* https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
+* De-clog motor but moving axle in and out
+* Talk about how the light sensor takes a reading over time
+* Talk about separation of amachine and hardware in final program
 
 ### UNORGANISED SCRAPS ###
 
