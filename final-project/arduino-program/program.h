@@ -17,7 +17,7 @@ struct State {
 };
 
 struct Program {
-  State* states; // Note to self, this stackoverflow question explains how to do dynamically sized arrays in C++ https://arduino.stackexchange.com/questions/3774/how-can-i-declare-an-array-of-variable-size-globally
+  State* states;
   int stateCount;
 };
 
