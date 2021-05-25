@@ -40,7 +40,8 @@ class Hardware {
     int mmDiscStepAmtInx = mmDiscStepAmtCount - 1;
 
     // Variables
-    int lightThreshold = (730+1010) / 2;
+    //int lightThreshold = (730+1010) / 2; // Nighttime calibration
+    int lightThreshold = (620+770) / 2; // Daytime calibration
     int readHeadOffset = -230;
 
     // Program methods
