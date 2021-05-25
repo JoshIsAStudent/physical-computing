@@ -6,9 +6,7 @@ In this experiment created a spinning disc using a plastic sweet tub lid, and te
 []>[Include video]
 
 
-## The Code
+## The Code & Wiring
 The program I used was the `stepper_oneRevolution` program from the Arduino IDE examples (`File > Examples > Stepper > stepper_oneRevolution`). I modified the `stepsPerRevolution` variable to `2048` and the speed parameter in `myStepper.setSpeed` to `15`.
 
-
-## The Wiring
-[]>[Include wiring diagram and info]
+[]>[Include wiring diagram and info. Specifically mention the driver board]
