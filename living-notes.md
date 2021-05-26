@@ -7,10 +7,6 @@
 * De-clog motor but moving axle in and out
 * Talk about how the light sensor takes a reading over time
 * Talk about separation of amachine and hardware in final program
-* About that time you thought the stepper needed a different chip but it definately didn't
-
-# Anton feedback - 8a 2021.04.20
-Mention explictly the angalogue to digital converter at the end of step 1
 
 # 7a 2021.04.13
 * even if you have an idea and discard it you can write a paragraph about that

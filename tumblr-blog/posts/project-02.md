@@ -2,6 +2,7 @@
 *Experiment conducted 2021/05/04*
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DS2I1JDmLDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Can't see the video? Watch it on YouTube!](https://youtu.be/DS2I1JDmLDw)
 
 My first experiment was to see if I could create a ring version of the loop memory, able to spin around a centre. I wanted to see if I could create a ring instead of a disc as if I could, then it would be possible to put the read and write heads in the same position, with one positioned inside the ring, and one on the outside (so long as the motor drove the loop from the outside). The weight reduction, though not required, felt like it could be a nice bonus. As is evident from the video however, it was not successful.
 

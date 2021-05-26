@@ -9,8 +9,9 @@ void setup() {
 
 void loop() {
   int val = analogRead(A0); // Potentiometer input
-  int out = map(val, 10, 360, 0, 180);
-  servo.write(out);
+  int out = map(val, 0, 1023, 0, 180);
+  servo.write(out); // Write to the servo output
+
   Serial.println(val);
   delay(15);
 }

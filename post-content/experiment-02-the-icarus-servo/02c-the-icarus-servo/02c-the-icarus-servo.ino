@@ -11,9 +11,9 @@ void setup() {
 void loop() {
   int highestLightLevel = 0;
   int newpos = pos;
-  for (int i=-1; i<=1; i++) { // Iterates i through the values -1, 0, 1 - corresponding to "left", "centre", and "right"
+  for (int i = -1; i <= 1; i++) { // Iterates i through the values -1, 0, 1 - corresponding to "left", "centre", and "right"
     // Calcuate next position to take a light reading from
-    int testpos = pos + i*5;
+    int testpos = pos + i * 5;
     if (testpos < 0) testpos = 0;
     if (testpos > 180) testpos = 180;
 
@@ -24,7 +24,7 @@ void loop() {
     // Take a light reading
     int light = analogRead(A0); // Photoresistor input
 
-    // If that reading is the highest so far, take note of it and the tested position
+    // If that reading is the highest so far, save it and the tested position to refer to later
     if (light > highestLightLevel) {
       highestLightLevel = light;
       newpos = testpos;
