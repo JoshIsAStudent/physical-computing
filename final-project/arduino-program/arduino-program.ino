@@ -6,7 +6,7 @@
 AMachine amachine;
 Hardware hardware;
 
-// Setup - Is run once by the Arudino
+// Setup - Is run once by the Arduino
 void setup() {
   amachine.program = incrementFourBit();
   amachine.hardware = &hardware;

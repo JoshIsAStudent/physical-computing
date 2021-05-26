@@ -3,7 +3,9 @@
 
 This time I set out to test how I could read which state my cardboard memory cells are in. I tested how well a photoresistor could be used to detect if the cardboard was blocking light to it. In the video below I demonstrate that the photo resistor could do this quite successfully, but also explain the different factors that contribute to how well it will or won't work on the final machine. After this initial experiment, I also ran additional tests with different coloured additional light sources and different lengths of cardboard, to see what affect that had on the photoresistor's outputs.
 
-For this experiment I reused the code and writing from my first photoresistor decoder experiment (modified to my needs.)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MakNOF3HM08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+For this experiment I reused the code and wiring from my first [photoresistor decoder experiment](/), modified to the needs of this experiment.
 
 # Experimenting with Additional Light Sources
 After my initial experiment, I tested putting different colours of LED above the photoresistor (but blockable by the cardboard) to see how that affected the photoresistor's ability to detect the cardboard. I also experimented with different widths of cardboard flaps to see what affect that had.

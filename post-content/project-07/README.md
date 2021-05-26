@@ -87,6 +87,7 @@ void loop() {
 }
 ```
 
+
 ## Hardware Challenges
 
 ### Distributing Power
@@ -100,11 +101,13 @@ One live rail is connected to the power supply, and the other to the Arduino. Bo
 When creating my test program to drive the stepper motor, it initially didn't work. The stepper motor would make noise, and the red LEDs on the driver board would turn on and off, but it wouldn't rotate. I ran the simple example program in the Arduino IDE to test if the problem was in my code, and sure enough the motor worked when I ran the example program. I eventually found that when you initialise the stepper motor interface, the pins are not meant to be consecutively ordered.
 
 **Correct code**
+
 ```cpp
 Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);
 ```
 
 **My incorrect code**
+
 ```cpp
 Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11); // Note that the middle two pins are wrong
 ```

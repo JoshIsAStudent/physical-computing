@@ -1,6 +1,6 @@
 # Final Project #6 : Perils of the Disc Memory
 
-Chronologically, this post takes place alongside the following post, where I assemble the whole machine. However, creating a version of the disc memory that wasn't full of issues proved to be a sega in and of itself, so I separated it out into it's own post.
+Chronologically, this post takes place alongside the following posts, where I assemble the whole machine. However, creating a version of the disc memory that wasn't full of issues proved to be a saga in and of itself, so I separated it out into it's own post.
 
 # From Disc One to Disc Three
 Originally, I had intended to use the plastic lid from my original experiment (disc number one) on the final machine. However, the distorted shape and warble of that lid meant that the write motor wasn't consistently able to hit the top of each bit - as some bits ended up centimetres lower down than others. In response to this I decided to make a new lid, and also took the opportunity to make it bigger, in hopes of being able to fit more bits on it that way.
@@ -30,7 +30,7 @@ My solution to this was to attach a much more rigid piece of wood to the undersi
 
 This was successful for quite a while! However, after an amount of time it became more and more frequent that the axle would "slip" within the plastic, causing the motor to stutter and the disc to become out of sync.
 
-# Alternative attachments
+# Alternative Attachments
 I experimented with different replacements for plastic that could maintain a tight-fit without causing issues for the motor. This included blu-tack, cable insulation, and padding in the form of cut felt and blanket. I even tried ditching the piece of wood and replacing it with a [binder clip](https://en.wikipedia.org/wiki/Binder_clip). However, all of these solutions were prone to one or more of following:
 
 * The amount of material was imbalanced on either side of the axle, causing the disc to slant.

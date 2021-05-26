@@ -5,6 +5,7 @@ For my first experiment I took the 10-bit analog output of a photoresistor (also
 
 # Components Used
 This experiment uses the Arduino UNO R3 Project Starter Kit.
+
 * 1 x UNO R3 Controller Board (the Arduino)
 * 1 x Breadboard
 * Breadboard jumper wires

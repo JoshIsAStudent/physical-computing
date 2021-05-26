@@ -9,6 +9,7 @@
 program that would make the servo move the resistor towards the brightest light reading it could find. I like to call it the [Icarus](https://en.wikipedia.org/wiki/Icarus) Servo!
 
 ## [Components Used]>[Incomplete list]
+
 ?[standard-components]
 * 1 x LED
 * 1 x 220Ω resistor

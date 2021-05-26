@@ -1,7 +1,7 @@
-# Final Project #9 : It Lives!
+# Final Project #9 : It Works!
 
 Having assembled the full machine, and tampered with the memory to motor attachment a bit, I was able to get the machine fully operational! In the video below, the Turning Machine is running a program that increments the binary number in memory by one. The program however is capable of running any valid Turing Machine program is it given (in the format of a C data structure).
 
-[]>[Include video demo-video.mov]
+?[youtube-video](https://youtu.be/npGdXoWBmCI)
 
 [You can see the complete code for the final machine on GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/final-project/arduino-program)

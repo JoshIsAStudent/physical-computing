@@ -1,46 +1,16 @@
 ### RANDOM ###
 * https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
+
+### CONTENT TO INCLUDE/COVER ###
+
+# General
 * De-clog motor but moving axle in and out
 * Talk about how the light sensor takes a reading over time
 * Talk about separation of amachine and hardware in final program
+* About that time you thought the stepper needed a different chip but it definately didn't
 
-### UNORGANISED SCRAPS ###
-
-# Experiments Portfolio - 4a 2021.03.09
-* Try to make the video as nice as you can. Camera steady and not too short
-* Include some kind of technical description - demonstrate you understand how the thing works - imagining you are explaining it to someone of your skill looking to do the same experience
-* Include a circuit diagram of what you did. TinkerCAD is okay, but if you prefer a formal engineering diagram is good also.
-* Include the Arduino code. Don't do a screenshot!
-
-* Absolutely fine to recreate experiments to get extra video, you can take them further, "whatever you need to do"
-* The idea is you should cover quite a breath of topics. The earlier experiments are extra useful for covering this breadth if your project focuses on something much smaller
-
-* You are welcome to send a blog post to Anton to ask if things are okay
-
-# Experiment - 5a 2021.03.16
-* Wired LED matric according to the complete guide
-* Installed LedControl library by Eberhard Fahle V1.0.6
-* Used example code from lesson 15 of the egeloo zip
-* It worked!
-
-* Did experiment 1 - got the outlien of the eyeball working
-* Wired the joystick, x to A0, y to A1
-* Did experiment 2 - to teste the joystick
-* Forgot "Serial.begin(9600);" in the startup function
-* The joystick worked!
-* Then I found out what I thought was x was y, (I was rotating the joystick 90deg anti-clockwise). Also the signal was inverted from what I expected
-
-* Then I did experiment 3!
-* It worked! Except I had to flip my y axis back to what it was (so now x is inverted but not y)
-
-* I put it all together into experiment 4, and it worked!
-
-* Experiment 5 I realised I didn't need to clear the screen after writing each column
-* I had to do some funky stuff with range clamping so that the max offset of the pupils in the + direction could still be reached on values other than the joystick's absolute max. Without this, the position would flicker when the joystick was at it's extremes
-
-* Experiment 5's code is messy, but it works
-
-* I'm thinking I might do a tidied version where I actually organise all the axis flipping, left and right, etc
+# Anton feedback - 8a 2021.04.20
+Mention explictly the angalogue to digital converter at the end of step 1
 
 # 7a 2021.04.13
 * even if you have an idea and discard it you can write a paragraph about that
@@ -55,33 +25,23 @@
 * lazy susan - rotation disk
 * "friction drive might be enough"
 
-# Anton feedback - 8a 2021.04.20
-Mention explictly the angalogue to digital converter at the end of step 1
-
-
-for final project, you can do one larger technical write up at the end, rather than all along the way
-final project
-* w/ regards to turning, it doesn't need to go very fast
-* the little steper motor anton reckons will be powerful enough
-* rather than having it in the centre - meaning you have to balance the disk, you could just do a frction drive, where you drive a small wheel, and then friction drive the big wheel
-* the dc motor would be faster, but you would need some other way of detecting position
-
-* I could repurpose a marble part
-* Youd could also do stuff with copper wire
-
-# Final project - 10a 2021.05.04
-* Heat metal skewer
-* Make hole in middle
-* Attach stepper motor to hole using blu tac
-* Secure stepper motor through holes in wings
-
-# 8a 2021.04.20
-Photo transistors can be more sensitive than photo resistors, and can also respond to particular wavelengths of light
-
 # Wiring the board - 2021.05.18 12a PC notes
 voltage (potential) is always relative to some arbitrary agreed zero - 0V, or "ground". So to use both the Arduino and DC power supplies, all that is required is to make sure the ground side is connected together, so it is shared as a common 0V reference. Then there will be two 5V rails (best not to connect these together directly) and components can be powered from either one.
 
-### UNORGANISED EXPERIMENT NOTES ###
+
+### ADVICE ###
+* Try to make the video as nice as you can. Camera steady and not too short.
+* Include some kind of technical description - demonstrate you understand how the thing works - imagining you are explaining it to someone of your skill looking to do the same experience.
+* Include a circuit diagram of what you did.
+
+* The idea is you should cover quite a breath of topics. The earlier experiments are extra useful for covering this breadth if your project focuses on something much smaller
+
+# Anton feedback - 8a 2021.04.20
+* for final project, you can do one larger technical write up at the end, rather than all along the way
+final project
+
+
+### EARLY EXPERIMENTS ###
 
 # Physical circuits - 2a 2021.02.23
 
@@ -173,3 +133,28 @@ If you had problems, troubleshooted to get something working, than found a solut
 ## Power supply
 * On the power supply, one side is 3.3V, one is 5V. You want the 5V side
   * Though you can move the jumpers about to change this
+
+# Experiment - 5a 2021.03.16
+* Wired LED matric according to the complete guide
+* Installed LedControl library by Eberhard Fahle V1.0.6
+* Used example code from lesson 15 of the egeloo zip
+* It worked!
+
+* Did experiment 1 - got the outlien of the eyeball working
+* Wired the joystick, x to A0, y to A1
+* Did experiment 2 - to teste the joystick
+* Forgot "Serial.begin(9600);" in the startup function
+* The joystick worked!
+* Then I found out what I thought was x was y, (I was rotating the joystick 90deg anti-clockwise). Also the signal was inverted from what I expected
+
+* Then I did experiment 3!
+* It worked! Except I had to flip my y axis back to what it was (so now x is inverted but not y)
+
+* I put it all together into experiment 4, and it worked!
+
+* Experiment 5 I realised I didn't need to clear the screen after writing each column
+* I had to do some funky stuff with range clamping so that the max offset of the pupils in the + direction could still be reached on values other than the joystick's absolute max. Without this, the position would flicker when the joystick was at it's extremes
+
+* Experiment 5's code is messy, but it works
+
+* I'm thinking I might do a tidied version where I actually organise all the axis flipping, left and right, etc

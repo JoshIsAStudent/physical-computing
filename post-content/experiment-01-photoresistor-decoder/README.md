@@ -6,6 +6,7 @@ For my first experiment I took the [10-bit analog]>[is that the correct term?] o
 []>[Include video]
 
 ## [Components Used]>[Check that these are correct]
+
 ?[standard-components]
 * 1 x Photoresistor
 * 1 x 5KΩ resistor

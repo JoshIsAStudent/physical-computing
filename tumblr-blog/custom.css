@@ -33,9 +33,9 @@ body {
 .post-content .title a {font-size: 2.5rem}
 .post-content .title {border-bottom: 3px white dotted}
 
-.post-content a {
-    color: blue;
-}
+.post-content a { color: #00b7ff; }
+.post-content a:hover { color: white; }
+.post-content a:visited { color: #db57ee; }
 
 /* Images */
 .post-content img {
@@ -56,3 +56,19 @@ body {
 {color: #00b7ff}
 .post-content pre code .hljs-comment {color: #969696}
 .post-content pre code .hljs-number {color: #db57ee}
+
+/* Padding */
+.post-content img,
+.post-content pre {
+  margin-bottom: 1em;
+}
+
+.post-content iframe {
+  margin: 1em 0;
+}
+
+/* Tables */
+td, th {
+    border: 1px solid white;
+    padding: .2em .5em;
+}

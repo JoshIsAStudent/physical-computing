@@ -1,6 +1,7 @@
 # Final Project #6 : Perils of the Disc Memory
 
-Chronologically, this post takes place alongside the following post, where I assemble the whole machine. However, creating a version of the disc memory that wasn't full of issues proved to be a sega in and of itself, so I separated it out into it's own post.
+Chronologically, this post takes place alongside the following posts, where I assemble the whole machine. However, creating a version of the disc memory that wasn't full of issues proved to be a saga in and of itself, so I separated it out into it's own post.
+
 
 ## From Disc One to Disc Three
 Originally, I had intended to use the plastic lid from my original experiment (disc number one) on the final machine. However, the distorted shape and warble of that lid meant that the write motor wasn't consistently able to hit the top of each bit - as some bits ended up centimetres lower down than others. In response to this I decided to make a new lid, and also took the opportunity to make it bigger, in hopes of being able to fit more bits on it that way.
@@ -21,6 +22,7 @@ The scissors I used while cutting where able to cut the cardboard fine, however 
 
 ![A photo of the third disc partway through the process of being cut. It is laid on a pizza board next to a Stanley knife.](disc-three-mid-progress.jpg)
 
+
 ## Attaching the Disc to the Stepper Motor
 This disc initially worked really well. Using a single blade of a small pair of scissors, I was able to create a small hole that fit tightly onto the axle of the stepper motor. However, far quicker than I expected the movement of the stepper motor enlarged the hole and caused it to gradually loose it's grip. This soon meant that whenever the stepper motor stopped spinning, the momentum of the disc would cause it to overshoot, which it could do in either direction depending on whether the motor had been going clockwise or anti-clockwise. Though I kept the cardboard bits fairly large, this margin of error still made it difficult to consistently position the bits such that the write motor could hit them.
 
@@ -32,7 +34,8 @@ My solution to this was to attach a much more rigid piece of wood to the undersi
 
 This was successful for quite a while! However, after an amount of time it became more and more frequent that the axle would "slip" within the plastic, causing the motor to stutter and the disc to become out of sync.
 
-## Alternative attachments
+
+## Alternative Attachments
 I experimented with different replacements for plastic that could maintain a tight-fit without causing issues for the motor. This included blu-tack, cable insulation, and padding in the form of cut felt and blanket. I even tried ditching the piece of wood and replacing it with a [binder clip](https://en.wikipedia.org/wiki/Binder_clip). However, all of these solutions were prone to one or more of following:
 
 * The amount of material was imbalanced on either side of the axle, causing the disc to slant.
@@ -41,6 +44,7 @@ I experimented with different replacements for plastic that could maintain a tig
 * The axle slipping inside the material, creating friction the motor couldn't handle and causing the disc to become out of sync.
 
 In the final machine, I used a combination of cable insulation and cut blanket. This works very well when it does work, and has lasted longer than anything else I tried. However, it is still prone to the friction problem, and will at times cause the disc to become out of sync.
+
 
 ## Evaluation
 While I do think that access to more precise tools would have elevated some of these problems, with hindsight I also think there are a couple underlying problems. The first is the weight of the disc. By making the disc bigger, and as a result of using a heavier kind of cardboard, the disc gains more momentum when spinning, which makes keeping it stable much trickier. The second problem is by attaching a length of wood to the disc the axle of the motor essentially becomes longer, making it harder to balance the disc and keep it flat.

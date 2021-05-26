@@ -3,7 +3,8 @@
 
 In this experiment I tried creating the memory cell (or "bit") I described in my brainstorming post, as well as a write mechanism to switch it's state. In the video below, I show the working experiment and explain some of the details as to why it works.
 
-[]>[Include video]
+?[youtube-video](Q-c1Pv9i7H4)
+
 
 ## The Code
 Here is the code for the simple test program I was running on the Arduino. Make sure you have the Servo library installed. You can manage your libraries from the Arduino by going to `Tools > Manage Libraries` from the toolbar.
