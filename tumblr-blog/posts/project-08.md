@@ -14,5 +14,7 @@ Without a better way to keep the wire stable, my solution was to attach another 
 # Protecting the Photoresistor
 The challenges I faced with the memory disc had knock on effects on the read head. In testing, I had discovered that the photoresistor worked better if it was positioned as close as possible to where a flipped cardboard bit would land when blocking it. However, when the disc warbled, this would cause flipped bits to strike the photoresistor from the side. This in turn caused the stepper motor to get stuck, and the photoresistor to get bent out of place.
 
-My solution to this was to place a stack of post-it notes next to the photoresistor that prevent the disc from leaning too low. Sometimes this will create enough friction on the disk to prevent the stepper motor from turning, which in turn causes the memory disc to go out of sync. Overall though, this solution solves more problems then it creates. 
+My solution to this was to place a stack of post-it notes next to the photoresistor that prevent the disc from leaning too low. Sometimes this will create enough friction on the disk to prevent the stepper motor from turning, which in turn causes the memory disc to go out of sync. Overall though, this solution solves more problems then it creates.
+
+# Inconsistent Ability to Write to Bits
 
