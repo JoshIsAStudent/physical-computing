@@ -3,8 +3,7 @@
 
 For my first experiment I took the [10-bit analog]>[is that the correct term?] output of a photoresistor (also known as a photocell), decoded the 4 most significant bits in code running on the Arduino, and then displayed those four bits on LEDs.
 
-[]>[Don't leave Rick here!!]
-?[youtube-video](dQw4w9WgXcQ)
+[]>[Include video]
 
 ## [Components Used]>[Check that these are correct]
 ?[standard-components]
@@ -64,7 +63,7 @@ void loop() {
 }
 ```
 
-?[complete-code](01-photoresistor-decoder)
+[You can see the complete code on GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/experiment-01-photoresistor-decoder/01-photoresistor-decoder).
 
 ## Step 3: Displaying The Decoded Signal
 Now that our code is decoding and outputting the signal, we want to display that using our four LEDs. Each LED has it's own 220Ω resistor. They are wired the same, except that each connects to a different pin on the Arduino. As we want the left-most LED to display the most significant bit (the 10th bit), we will connect it to pin 13.

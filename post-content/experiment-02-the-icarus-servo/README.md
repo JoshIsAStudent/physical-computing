@@ -39,7 +39,7 @@ void loop() {
 }
 ```
 
-?[complete-code](02a-potentiometer-led)
+[You can see the complete code on GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/experiment-02-the-icarus-servo/02a-potentiometer-led).
 
 The code here takes the signal from the potentiometer via pin A0, and outputs the signal to the LED on pin 7. The potentiometer input is a 10-bit value (in the range 0-1023), but the output pin is only a 8-bit output (in the range 0-255). For this reason, we use the `map` function to convert the value from the potential from the input range into the output range, before using it to control the LED.
 
@@ -85,7 +85,7 @@ void loop() {
 }
 ```
 
-?[complete-code](02b-potentiometer-servo)
+[You can see the complete code on GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/experiment-02-the-icarus-servo/02b-potentiometer-servo).
 
 Like in our LED example, I use the `map` method to translate the value from the input range to the output range, but this time the output range is 0-180, the rotations in degrees our servo can handle. The Ardiuno kindly abstracts away converting that value into the electrical signal the servo actually wants.
 
@@ -158,7 +158,7 @@ void loop() {
 }
 ```
 
-?[complete-code](02c-the-icarus-servo)
+[You can see the complete code on GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/experiment-02-the-icarus-servo/02c-the-icarus-servo).
 
 ## The Results
 There was some limited success.

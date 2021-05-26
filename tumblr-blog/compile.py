@@ -47,16 +47,21 @@ for experiment in experiments:
         )
 
         # Complete code template
-        post = re.sub(
-            r"\?\[complete-code\]\((.+?)\)",
-            "You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/" + experiment + "/\\1).",
-            post
-        )
+        # post = re.sub(
+        #     r"\?\[complete-code\]\((.+?)\)",
+        #     "You can see the complete code on [GitHub](https://github.com/JoshIsAStudent/physical-computing/tree/main/post-content/" + experiment + "/\\1).",
+        #     post
+        # )
 
         # Youtube video template
+        # post = re.sub(
+        #     r"\?\[youtube-video\]\((.+?)\)",
+        #     "See a demo on [YouTube](https://youtu.be/\\1).",
+        #     post
+        # )
         post = re.sub(
             r"\?\[youtube-video\]\((.+?)\)",
-            "See a demo on [YouTube](https://youtu.be/\\1).",
+            '<iframe width="560" height="315" src="https://www.youtube.com/embed/\\1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             post
         )
 
