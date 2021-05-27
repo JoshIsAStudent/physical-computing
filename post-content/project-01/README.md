@@ -2,7 +2,7 @@
 
 
 ## The Idea
-[Charles Babbage's mechanical computer](https://en.wikipedia.org/wiki/Charles_Babbage) and [Alan Turing's a-machine](https://en.wikipedia.org/wiki/Turing_machine) (better known as the Turing Machine) both live rent-free in my imagination, which leads to some esoteric ideas and trains of thought! For my project I want to create a primitive Turing Machine - where the machine itself is operated by the Arduino, which then reads and writes to a mechanical memory.
+[Charles Babbage's mechanical computer](https://en.wikipedia.org/wiki/Charles_Babbage) and [Alan Turing's a-machine](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf) (better known as the [Turing Machine](https://en.wikipedia.org/wiki/Turing_machine)) both live rent-free in my imagination, which leads to some esoteric ideas and trains of thought! For my project I want to create a primitive Turing Machine - where the machine itself is operated by the Arduino, which then reads and writes to a mechanical memory.
 
 ![A mind map of project ideas that I brainstormed](projects-brainstorm.jpg)
 **Fig 1:** I did _try_ to have a more reasonable idea before jumping into working on an overengineered Turning Machine. But, this idea was easily the most captivating, both to me and to the people I showed it to. Though, I did also consider doing a project with my new favourite infrared camera, the Nintendo Wiimote.

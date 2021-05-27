@@ -124,6 +124,8 @@ void AMachine::halt(String msg) {
 ## The Hardware Class
 The `Hardware` class handles all of the machine's electronics and serial communication. It's primary methods are `read`, `write`, `move`, and `msg`, as they are all used by the `AMachine` to interface with the hardware. It also has `setup` and `loop` methods, called by their respective Arduino functions, that are responsible for initialising the hardware, updating the status LEDs, and responding to input from the IR receiver. All additional methods are essentially utility methods used in service of the others.
 
+Of note, having learned by lesson from a [previous experiment](https://physicalcomputingwithj.tumblr.com/post/652206318924496896), is that the `read` method will take an average reading from the photoresistor over a short time period, to help mitigate the effects of noise in the signal.
+
 [You can see the code for this class on GitHub in the `hardware.h` and `hardware.info` files.](https://github.com/JoshIsAStudent/physical-computing/tree/main/final-project/arduino-program)
 
 Keeping the `AMachine` and `Hardware` classes separate worked out well for me when implementing the failure-to-write failsafe. As this is distinctly a hardware problem, I was able to update the `Hardware::write()` method to keep checking if the bit had been written to, without having to alter or complicate the Turning machine implementation at all.
