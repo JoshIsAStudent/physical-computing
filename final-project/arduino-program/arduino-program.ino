@@ -14,7 +14,7 @@ void setup() {
   hardware.setup();
 }
 
-// Loop - Is run repeated by the Arduino
+// Loop - Is run repeatedly by the Arduino
 void loop() {
   hardware.loop();
   if (!hardware.maintenanceMode) amachine.step();

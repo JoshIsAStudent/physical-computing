@@ -17,7 +17,7 @@ struct State {
 };
 
 struct Program {
-  State* states;
+  State* states; // An array of states
   int stateCount;
 };
 
