@@ -65,28 +65,3 @@ final project
 
 ## Potentiometer
 * Fun fact: doesn't matter which way around you connect the terminals
-
-# Experiment - 5a 2021.03.16
-* Wired LED matric according to the complete guide
-* Installed LedControl library by Eberhard Fahle V1.0.6
-* Used example code from lesson 15 of the egeloo zip
-* It worked!
-
-* Did experiment 1 - got the outlien of the eyeball working
-* Wired the joystick, x to A0, y to A1
-* Did experiment 2 - to teste the joystick
-* Forgot "Serial.begin(9600);" in the startup function
-* The joystick worked!
-* Then I found out what I thought was x was y, (I was rotating the joystick 90deg anti-clockwise). Also the signal was inverted from what I expected
-
-* Then I did experiment 3!
-* It worked! Except I had to flip my y axis back to what it was (so now x is inverted but not y)
-
-* I put it all together into experiment 4, and it worked!
-
-* Experiment 5 I realised I didn't need to clear the screen after writing each column
-* I had to do some funky stuff with range clamping so that the max offset of the pupils in the + direction could still be reached on values other than the joystick's absolute max. Without this, the position would flicker when the joystick was at it's extremes
-
-* Experiment 5's code is messy, but it works
-
-* I'm thinking I might do a tidied version where I actually organise all the axis flipping, left and right, etc
