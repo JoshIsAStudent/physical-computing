@@ -25,4 +25,4 @@ My solution to this was to place a stack of post-it notes next to the photoresis
 ## Inconsistent Ability to Write to Bits
 During my [initial test](https://physicalcomputingwithj.tumblr.com/post/652205041959174144) of how well I could write to the cardboard bits, I left the motor running for a while to see if eventually the bit would stop working. In that experiment it kept going, and seemed to hold up really well. However, in that test the bit was sat on a rigid, flat, surface. Now that the bit was on a wobbly disk, problems consistently being able to write to the bit became quite frequent.
 
-My solution to this was to every time the machine attempts to write to a bit, have the machine then re-read the bit to test if writing was successful. While it is very much a hack, it works quite well on the final machine.
+My solution to this was to every time the machine attempts to write to a bit, have the machine then re-read the bit to test if writing was successful. While it is very much a hack, it works quite well on the final machine. I call it the failure-to-write failsafe.
