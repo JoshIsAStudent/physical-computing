@@ -61,74 +61,10 @@ final project
 
 * If you only output numbers to the serial output, you can get a graph!
 
-## Light resistor demo
-```C
-void setup() {
-  pinMode(A0, INPUT);
-  Serial.begin(9600); // You can treat this as a "magic number"
-}
-
-void loop() {
-  int light = analogueRead(A0);
-  Serial.println(light);
-  delay(10);
-}
-```
-
 # Notes - 3a 2021.03.02
 
 ## Potentiometer
-* Has terminal 1, washer, terminal 2
-* The terminals connect to either end of a track
-* The wiper connects at some point inbetween
-
-* You connect voltage to the terminals, and take a signal off of the washer
 * Fun fact: doesn't matter which way around you connect the terminals
-
-* 200 Ohms is fine for a LED resitor
-
-## Anton on calculating resistance
-can work it out like this: LED typically drops about 2V, precise value can be obtained from datasheet for critical work
-LED current is about 20mA, again from datasheet
-power supply is 5V
-so with 5V - 2V = 3V across the resistor, we want it to conduct 20mA
-Ohms law: R = V / I
-= 3 / 0.02
-= 150 Ohms, which is typical for a 5mm LED
-but not critical
-
-## Servos
-* Servo's don't spin like motors, they rotate in between two angles, and you can choose the position in-between them you want to go
-* It uses a potentiometer to know exactly what position it's pointing in at the moment, and uses that to try and change it's direction to the one you want
-* There is a protocol for sending the desired angle to the servo along it's singal wire. We don't have to worry about this, as the Ardiuno has libraries for handling this.
-  * tl;dr, the length of the pulse dictates the size of the angle
-* It's a closed loop system, as it acts on feedback (it continually makes motion depending on the difference between the desired state and the actual state)
-
-If you had problems, troubleshooted to get something working, than found a solution, that's really good to write about
-
-# Notes - 4a 2021.03.09
-
-## Stepper motors
-* An EggBot is a good potential project
-
-### How they work
-* Idea is you run a current through a coil which creates a magnetic feild, which pushes/pulls a magenet, which causes the motor to turn
-* In the case of a stepper motor, you control the current through the various coils in the motor (via software) to achieve the desired result
-  * The Elegoo kit on minerva provides more of a guide
-* On a DC motor you apply power and it spins, on a stepper motor, you send currents to change it's position by one "step" (a fraction of a revolution)
-* In a stepper motor, you don't have absolute positioning like a servo (though you can use limit switches to figure out things like this), but you can make very precise movements
-
-* There are bi-polar and uni-polar stepper motors. Uni-polor has a more complicated internal arrangement, but is easier to drive than the bi-polar, which is harder to drive.
-
-* Red wire - ground
-* Blue, yellow, pink, orange - control (set in software, according to sequence that are )
-
-* As Arduino is not powerful enough to drive the motor, so we use to control a transistor, which when enabled lets a much more powerful signal through
-* We do this using a ULM driver chip (I think that's what it was called), which has 8 transistors in it
-
-## Power supply
-* On the power supply, one side is 3.3V, one is 5V. You want the 5V side
-  * Though you can move the jumpers about to change this
 
 # Experiment - 5a 2021.03.16
 * Wired LED matric according to the complete guide
