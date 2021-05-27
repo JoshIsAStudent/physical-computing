@@ -4,7 +4,7 @@ Now that I had each part of the machine working in isolation (save for the peril
 
 
 ## Testing the Hardware
-My first step was to connect all of the components to the Arduino and appropriate power supply. Save for the handful of challenges outlined below, the components all worked as expected! I initially tested the components using a [simple program](https://github.com/JoshIsAStudent/physical-computing/blob/main/final-project/hardware-test/hardware-test.ino)]>[check this link works] that would iterate through each component and operate it. (I even reused my decode function from my photoresistor decoder to test the LEDs.)
+My first step was to connect all of the components to the Arduino and appropriate power supply. Save for the handful of challenges outlined below, the components all worked as expected! I initially tested the components using a [simple program](https://github.com/JoshIsAStudent/physical-computing/blob/main/final-project/hardware-test/hardware-test.ino) that would iterate through each component and operate it. (I even reused my decode function from my photoresistor decoder to test the LEDs.)
 
 ```cpp
 #include <Stepper.h>

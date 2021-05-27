@@ -3,7 +3,7 @@
 Now that I had each part of the machine working in isolation (save for the perils of the memory disc), it was time to put them all together! A complete technical breakdown of the machine is included at the end of the blog, but this post outlines the particular challenges I faced.
 
 # Testing the Hardware
-My first step was to connect all of the components to the Arduino and appropriate power supply. Save for the handful of challenges outlined below, the components all worked as expected! I initially tested the components using a simple program](https://github.com/JoshIsAStudent/physical-computing/blob/main/final-project/hardware-test/hardware-test.ino) that would iterate through each component and operate it. (I even reused my decode function from my photoresistor decoder to test the LEDs.)
+My first step was to connect all of the components to the Arduino and appropriate power supply. Save for the handful of challenges outlined below, the components all worked as expected! I initially tested the components using a [simple program](https://github.com/JoshIsAStudent/physical-computing/blob/main/final-project/hardware-test/hardware-test.ino) that would iterate through each component and operate it. (I even reused my decode function from my photoresistor decoder to test the LEDs.)
 
 ```cpp
 #include <Stepper.h>

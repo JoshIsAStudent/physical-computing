@@ -7,7 +7,7 @@ This time I set out to test how I could read which state my cardboard memory cel
 
 [Can't see the video? Watch it on YouTube!](https://youtu.be/MakNOF3HM08)
 
-For this experiment I reused the code and wiring from my first [photoresistor decoder experiment](/), modified to the needs of this experiment.
+For this experiment I reused the code and wiring from my first [photoresistor decoder experiment](https://physicalcomputingwithj.tumblr.com/post/644288488002453504), modified to the needs of this experiment.
 
 # Experimenting with Additional Light Sources
 After my initial experiment, I tested putting different colours of LED above the photoresistor (but blockable by the cardboard) to see how that affected the photoresistor's ability to detect the cardboard. I also experimented with different widths of cardboard flaps to see what affect that had.

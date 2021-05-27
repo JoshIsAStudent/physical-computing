@@ -8,11 +8,10 @@ The write motor needs to be suspended above the memory disc in such a way that t
 
 ?[youtube-video](gLwQKJ8Hqf4)
 
-This worked reasonably well, and had the advantage that is was easy to adjust the position of the motor by bending the wire. However, because I had taped the wire to the side of box, it was able to rotate back and forth, meaning I couldn't move the cables connecting to the motor out of the way of the memory loop without also moving the motor.
+This worked reasonably well, and had the advantage that is was easy to adjust the position of the motor by bending the wire. However, because I had taped the wire to the side of box, it was able to rotate back and forth, meaning I couldn't move the cables connecting to the motor out of the way of the memory loop without also moving the motor. Without a better way to keep the wire stable, my solution was to attach another piece of cardboard to the box and drive the wire through it at two different points. This allowed the wire to stay in a fixed position, while still being moved about.
 
-[]>[Include image]
-
-Without a better way to keep the wire stable, my solution was to attach another piece of cardboard to the box and drive the wire through it at two different points. This allowed the wire to stay in a fixed position, while still being moved about.
+![](motor-attachment-front.jpg)
+![](motor-attachment-back.jpg)
 
 
 ## Protecting the Photoresistor
@@ -20,7 +19,7 @@ The challenges I faced with the memory disc had knock on effects on the read hea
 
 My solution to this was to place a stack of post-it notes next to the photoresistor that prevent the disc from leaning too low. Sometimes this will create enough friction on the disk to prevent the stepper motor from turning, which in turn causes the memory disc to go out of sync. Overall though, this solution solves more problems then it creates.
 
-[]>[Include image]
+![](post-it-protected-photoresistor.jpg)
 
 
 ## Inconsistent Ability to Write to Bits

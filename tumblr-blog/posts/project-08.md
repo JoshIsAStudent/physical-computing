@@ -9,14 +9,17 @@ The write motor needs to be suspended above the memory disc in such a way that t
 
 [Can't see the video? Watch it on YouTube!](https://youtu.be/gLwQKJ8Hqf4)
 
-This worked reasonably well, and had the advantage that is was easy to adjust the position of the motor by bending the wire. However, because I had taped the wire to the side of box, it was able to rotate back and forth, meaning I couldn't move the cables connecting to the motor out of the way of the memory loop without also moving the motor.
+This worked reasonably well, and had the advantage that is was easy to adjust the position of the motor by bending the wire. However, because I had taped the wire to the side of box, it was able to rotate back and forth, meaning I couldn't move the cables connecting to the motor out of the way of the memory loop without also moving the motor. Without a better way to keep the wire stable, my solution was to attach another piece of cardboard to the box and drive the wire through it at two different points. This allowed the wire to stay in a fixed position, while still being moved about.
 
-Without a better way to keep the wire stable, my solution was to attach another piece of cardboard to the box and drive the wire through it at two different points. This allowed the wire to stay in a fixed position, while still being moved about.
+![](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/project-08/motor-attachment-front.jpg)
+![](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/project-08/motor-attachment-back.jpg)
 
 # Protecting the Photoresistor
 The challenges I faced with the memory disc had knock on effects on the read head. In testing, I had discovered that the photoresistor worked better if it was positioned as close as possible to where a flipped cardboard bit would land when blocking it. However, when the disc warbled, this would cause flipped bits to strike the photoresistor from the side. This in turn caused the stepper motor to get stuck, and the photoresistor to get bent out of place.
 
 My solution to this was to place a stack of post-it notes next to the photoresistor that prevent the disc from leaning too low. Sometimes this will create enough friction on the disk to prevent the stepper motor from turning, which in turn causes the memory disc to go out of sync. Overall though, this solution solves more problems then it creates.
+
+![](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/project-08/post-it-protected-photoresistor.jpg)
 
 # Inconsistent Ability to Write to Bits
 

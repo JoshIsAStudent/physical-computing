@@ -7,9 +7,11 @@ Originally, I had intended to use the plastic lid from my original experiment (d
 
 I made lid number two by drawing around the base of a bin onto a sheet cardboard. Though this disc turned out well, I struggled to pin point the centre of it, and ultimately missed.
 
-Rather than continually trial and error for a suitable centre on disc two, I moved into disc three. To make this one, I considered pinning a piece of string to a decided centre and attaching a pencil to the other end, as a way of drawing a circle with a known centre. However, I realised I could remove human error if I instead printed a computer generated template, stuck that onto the cardboard, then cut around it.
+![](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/project-06/disc-two.jpg)
 
-I printed the template out onto four pieces of A4 (each with lots of overlap with it's neighbours), taped them to one another in their corrected position, then taped the edges of the paper to the cardboard. I also put a pin through the centre of the template, which served both to mark the centre on the cardboard, and to hold the paper in place once I started cutting away the edges of the paper.
+Rather than continually trial and error for a suitable centre on disc two, I moved onto disc three. To make it, I considered pinning a piece of string to a decided centre and attaching a pencil to the other end, as a way of drawing a circle with a known centre. However, I realised I could remove human error if I instead printed a computer generated template, stuck that onto the cardboard, then cut around it.
+
+I printed a template I made in PowerPoint onto four pieces of A4 (each with lots of overlap with it's neighbours), taped them to one another in their correct position, then taped the edges of the paper to the cardboard. I also put a pin through the centre of the template, which served both to mark the centre on the cardboard, and to hold the paper in place once I started cutting away the edges of the paper.
 
 ![A photo of the template laid on top of the cardboard. The different parts of the template are scattered across the cardboard.](https://raw.githubusercontent.com/JoshIsAStudent/physical-computing/main/post-content/project-06/disc-three-template-parts.jpg)
 

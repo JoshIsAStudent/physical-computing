@@ -5,7 +5,7 @@ This time I set out to test how I could read which state my cardboard memory cel
 
 ?[youtube-video](MakNOF3HM08)
 
-For this experiment I reused the code and wiring from my first [[photoresistor decoder experiment](/)]>[link to the post], modified to the needs of this experiment.
+For this experiment I reused the code and wiring from my first [photoresistor decoder experiment](https://physicalcomputingwithj.tumblr.com/post/644288488002453504), modified to the needs of this experiment.
 
 
 ## Experimenting with Additional Light Sources
