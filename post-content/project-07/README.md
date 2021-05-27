@@ -91,11 +91,7 @@ void loop() {
 ## Hardware Challenges
 
 ### Distributing Power
-All of the components used are able to be powered by the 5V provided by the Arduino except for the stepper motor, which needed a 5V from a more stronger power supply. I needed to be able to supply power to all of the components from the breadboard. I did this as follows
-
-[]<[Technical diagram]
-
-One live rail is connected to the power supply, and the other to the Arduino. Both of the ground rails are connected directly to the Arduino. To ensure the power supply does not provide signal to the "Arduino rail", you need to remove the connector from that side. When connecting the power supply to the breadboard, be sure also to check that the positive and negative indicators correctly align with the rails they are plugged into. If they don't you need to connect the supply to the other side of the breadboard. (Technically, you would instead treat the ground rail as the live rail and vice-versa, but that seems like a relatively sure-fire way to create confusion.)
+All the components can be powered by the 5V provided by the Arduino except for the stepper motor, which needs 5V from a stronger power supply. To be able to wire all of my components through the breadboard, one live rail is connected to the power supply, and the other to the Arduino. Both of the ground rails are connected directly to the Arduino to provide a common ground. To ensure the power supply does not provide signal to the "Arduino rail", you need to remove the jumper from the appropriate side of the power supply. When connecting the power supply to the breadboard, be sure also to check that the positive and negative indicators correctly align with the rails they are plugged into. If they don't you need to connect the supply to the other side of the breadboard. (Technically, you would instead treat the ground rail as the live rail and vice-versa, but that seems like a relatively sure-fire way to create confusion.)
 
 ### Stepper Motor Pins
 When creating my test program to drive the stepper motor, it initially didn't work. The stepper motor would make noise, and the red LEDs on the driver board would turn on and off, but it wouldn't rotate. I ran the simple example program in the Arduino IDE to test if the problem was in my code, and sure enough the motor worked when I ran the example program. I eventually found that when you initialise the stepper motor interface, the pins are not meant to be consecutively ordered.
