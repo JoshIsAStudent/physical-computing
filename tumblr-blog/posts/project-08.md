@@ -6,6 +6,7 @@ The entire machine is build on a large cardboard box, which I did simply so I co
 The write motor needs to be suspended above the memory disc in such a way that the area around the disc is left clear for memory bits to pass through without hitting anything. Initially I suspended the motor in the air with a single piece of wire, as shown in the video below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gLwQKJ8Hqf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Can't see the video? Watch it on YouTube!](https://youtu.be/gLwQKJ8Hqf4)
 
 This worked reasonably well, and had the advantage that is was easy to adjust the position of the motor by bending the wire. However, because I had taped the wire to the side of box, it was able to rotate back and forth, meaning I couldn't move the cables connecting to the motor out of the way of the memory loop without also moving the motor.

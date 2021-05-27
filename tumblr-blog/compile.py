@@ -61,7 +61,7 @@ for experiment in experiments:
         # )
         post = re.sub(
             r"\?\[youtube-video\]\((.+?)\)",
-            '<iframe width="560" height="315" src="https://www.youtube.com/embed/\\1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n[Can\'t see the video? Watch it on YouTube!](https://youtu.be/\\1)',
+            '<iframe width="560" height="315" src="https://www.youtube.com/embed/\\1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n\n\n[Can\'t see the video? Watch it on YouTube!](https://youtu.be/\\1)',
             post
         )
 

@@ -182,6 +182,7 @@ void loop() {
 ## There you have it! For real this time!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qPuSeDbLhfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Can't see the video? Watch it on YouTube!](https://youtu.be/qPuSeDbLhfQ)
 
 While recording the video I had my phone torch on, which I used to encourage the servo to move in particular directions. Sometimes the jumper wires would push against it, but otherwise it worked reasonably well! Working on this experiment in particular, I was surprised to see just how prevalent potential divider circuits are in electronics.

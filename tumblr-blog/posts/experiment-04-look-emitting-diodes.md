@@ -22,6 +22,7 @@ I first connected the 8x8 matrix display as shown. n.b. TinkerCAD doesn't have a
 To be able to control the display from the Arduino, I installed the LedControl library by Eberhard Fahle V1.0.6. I ran the example code from lesson 15 of the Elegoo starter kit PDF to verify that the display was working!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hAD-G1yBZO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Can't see the video? Watch it on YouTube!](https://youtu.be/hAD-G1yBZO8)
 
 ## The Code
@@ -131,6 +132,7 @@ With the exception of some odd behaviour around the edges, it worked well!
 [You can view the complete code on GitHub.](https://github.com/JoshIsAStudent/physical-computing/blob/main/post-content/experiment-04-look-emitting-diodes/04b-eyeball-complete/04b-eyeball-complete.ino)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/S1hQSnyeevg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Can't see the video? Watch it on YouTube!](https://youtu.be/S1hQSnyeevg)
 
 # Part 3: A New Face in Town
@@ -176,6 +178,7 @@ void loop() {
 
 # Hello World!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-ydEpLwCPuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Can't see the video? Watch it on YouTube!](https://youtu.be/-ydEpLwCPuA)
 
 I think the end result is pretty charming! It was definitely an interesting application of binary bit manipulations and helped me practise my skills in using them. Though, the final code could definitely be un-muddled and improved. I definitely learned more about what to be thinking about when interpreting input signals from electronics in non-continuous ways - dealing with nuances such as ensuring the absolute maximum value of the input signal does not have it's own discrete output value.

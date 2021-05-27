@@ -4,6 +4,7 @@
 For my first experiment, I wired the Arduino to read the analog output of a potential divider circuit with a photoresistor in it (a.k.a. a photocell) as a 10-bit value. It then decoded the 4 most significant bits in code and displayed those 4 bits on LEDs.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wad_VNBkfw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Can't see the video? Watch it on YouTube!](https://youtu.be/wad_VNBkfw0)
 
 # Components Used

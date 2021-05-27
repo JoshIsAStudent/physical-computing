@@ -4,6 +4,7 @@
 In this experiment I tried creating the memory cell (or "bit") I described in my brainstorming post, as well as a write mechanism to switch it's state. In the video below, I show the working experiment and explain some of the details as to why it works.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q-c1Pv9i7H4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Can't see the video? Watch it on YouTube!](https://youtu.be/Q-c1Pv9i7H4)
 
 # The Code
