@@ -159,15 +159,17 @@ Another nice benefit of separating the hardware code from the turning machine co
 ```cpp
 class HardwareInterface {
 public:
+  bool maintenanceMode
+
   // Program methods
-  void setup();
-  void loop();
+  virtual void setup() = 0;
+  virtual void loop() = 0;
 
   // A Machine methods
-  bool read();
-  void write(bool value);
-  void move(int amt);
-  void msg(String msg);
+  virtual bool read() = 0;
+  virtual void write(bool value) = 0;
+  virtual void move(int amt) = 0;
+  virtual void msg(String msg) = 0;
 };
 ```
 

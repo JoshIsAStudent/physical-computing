@@ -104,7 +104,9 @@ void loop() {
 Like in our LED example, I use the `map` method to translate the value from the input range to the output range, but this time the output range is 0-180, the rotations in degrees our servo can handle. The Ardiuno kindly abstracts away converting that value into the electrical signal the servo actually wants.
 
 ## There you have it! Sort of...
-?[youtube](-IN2lPdBeaI)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-IN2lPdBeaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Can't see the video? Watch it on YouTube!](https://youtu.be/-IN2lPdBeaI)
 
 Judging by the plot of the potentiometer signal, it seems that as the potentiometer and other components wobble about, it sends a somewhat volatile signal, hence the weird movement from the servo. Blu-tacking the potentiometer to the breadboard helped to minimise that. It worked well enough for my purposes, and I was curious to try what I've now dubbed the Icarus servo!
 
