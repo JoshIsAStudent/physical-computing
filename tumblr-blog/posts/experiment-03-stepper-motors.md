@@ -18,9 +18,9 @@ This experiment uses the Arduino UNO R3 Project Starter Kit.
 * 1 x UNO R3 Controller Board (the Arduino)
 * 1 x Breadboard
 * Breadboard jumper wires
-* 1x Stepper Motor (28BYJ-48)
-* 1x Stepper Motor Driver Board (ULN2003)
-* 1x Power supply module
+* 1 x Stepper Motor (28BYJ-48)
+* 1 x Stepper Motor Driver Board (ULN2003)
+* 1 x Power supply module
 
 # Wiring the Stepper Motor
 Below is a diagram showing how I wired the stepper motor. n.b. [TinkerCAD](www.tinkercad.com) doesn't include a stepper motor and  driver board in it's available components, so I've recreated the driver board using a mini breadboard. Additionally, the power supply is different to that provided in the kit.

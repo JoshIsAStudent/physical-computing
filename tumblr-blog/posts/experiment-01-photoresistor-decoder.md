@@ -34,7 +34,7 @@ By reading the signal carried by the orange wire, we can now read how much light
 
 We can program our `setup()` function to read this analog signal into the Arduino. In the meantime, we will also set up pins 10-13 as digital outputs, which we will use to output the 4 most significant bits of the signal to the LEDs.
 
-```C
+```cpp
 void setup() {
   pinMode(A0, INPUT); // Read in the 10-bit "analog" signal from pin A0
   pinMode(10, OUTPUT); // Setup pins 10-13 as output pins
@@ -47,7 +47,7 @@ void setup() {
 
 Next we will create a function that takes that signal as input, and outputs the value of a particular bit as a boolean. Here `x` is the value being decoded and `k` is which bit we are decoding (0-indexed). (Though it might be slightly erroneous to make this it's own function, it makes the loop code more readable, and the compiler will likely inline the function for us anyway.)
 
-```C
+```cpp
 bool decode(int x, int k) {
   return (x & ( 1 << k )) != 0;
 }
@@ -55,7 +55,7 @@ bool decode(int x, int k) {
 
 We now have everything we need to create our loop function. Here we store the signal from the potential divider in variable `s`, output that value to the serial port, and then one by one decode each bit and update our digital outputs accordingly.
 
-```C
+```cpp
 void loop() {
   int s = analogRead(A0); // Read the singal on pin A0
   Serial.println(s); // Output that signal to the serial output

@@ -9,8 +9,8 @@ This experiment uses the Arduino UNO R3 Project Starter Kit.
 * 1 x UNO R3 Controller Board (the Arduino)
 * 1 x Breadboard
 * Breadboard jumper wires
-* 1x 8x8 LED Dot Matrix Display (MAX7219)
-* 1x Joystick
+* 1 x 8x8 LED Dot Matrix Display (MAX7219)
+* 1 x Joystick
 
 # Part 1: Wiring the Display
 

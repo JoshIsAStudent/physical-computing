@@ -15,9 +15,9 @@ If you're looking for complete information on the motor [Bret Stateham](http://B
 ## Components Used
 
 ?[standard-components]
-* 1x Stepper Motor (28BYJ-48)
-* 1x Stepper Motor Driver Board (ULN2003)
-* 1x Power supply module
+* 1 x Stepper Motor (28BYJ-48)
+* 1 x Stepper Motor Driver Board (ULN2003)
+* 1 x Power supply module
 
 ## Wiring the Stepper Motor
 Below is a diagram showing how I wired the stepper motor. n.b. [TinkerCAD](www.tinkercad.com) doesn't include a stepper motor and  driver board in it's available components, so I've recreated the driver board using a mini breadboard. Additionally, the power supply is different to that provided in the kit.
